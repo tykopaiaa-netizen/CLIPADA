@@ -1,0 +1,21 @@
+CLIPA 3.16
+
+Editor reorganizado: mídia à esquerda, prévia ao centro, propriedades à
+direita e timeline independente embaixo, com altura ajustável.
+
+Vídeos e GIFs em camadas, além de imagens, sons e fundo. Importação múltipla,
+posição/tamanho livres, rotação, opacidade, filtros simples, ordem, ocultação
+e bloqueio de camadas. Transformação do vídeo principal sobre o fundo.
+
+Cursor e seleção de tempo separados. Clique posiciona; Shift + arrastar
+seleciona; tesoura/S divide; Delete exclui; I/O + Manter preserva a seleção.
+Menu de contexto com ações de edição. Ampliar não esconde todas as faixas.
+
+Gravação em disco por blocos, com pasta escolhida pelo usuário; RAM opcional.
+Exportação desktop nativa H.264/AAC com processamento sequencial de quadros,
+áudio por blocos, saída em disco, até 4K e escolha de encoder/compressão.
+Removidas as travas antigas de 900 MB e 10 minutos dessa exportação.
+Tratamento de cancelamento, pouco espaço, pasta sem acesso e nova tentativa.
+
+Modelos, legendas, biblioteca e ferramentas de áudio anteriores preservados.
+Este pacote não pretende ter todas as funções dos editores comerciais.

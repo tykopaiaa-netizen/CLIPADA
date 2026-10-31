@@ -1,0 +1,14 @@
+CLIPA 3.10 — 19/10/2026
+
+• Canal Dark: quarto cartão, aba de narração, orientação horizontal/vertical, análise visual online por trechos, roteiro editável, vozes sintéticas ou importadas e legendas do roteiro.
+• Voz em faixa separada: volume, ativação, prévia sincronizada, mistura com áudio original e inclusão no MP4.
+• Velocidade de 0,25× a 4× na prévia e exportação, preservando o tom do áudio. Duração final explicada no painel Exportar.
+• Entrada e saída suaves de áudio, de 0 a 5 segundos.
+• Criar cópia do projeto; roteiro, áudio narrado, velocidade e ajustes salvos na biblioteca.
+• Importação valida o novo vídeo antes de limpar a edição aberta. Arquivos inválidos preservam o projeto atual.
+• Exportação, SRT e envio para outro modelo levam em conta a velocidade. Reabrir um projeto preserva o reconhecimento da renderização atual.
+• Proteção contra tarefas simultâneas, limites claros, cancelamento, reaproveitamento das vozes geradas e preservação dos blocos já concluídos.
+• Avisos de erro anteriores deixam de aparecer quando a tarefa de narração termina com sucesso.
+• Painel em tons de cinza, prévia fixa, atalhos e explicações nos controles novos. Atalho 4 abre Canal Dark; os outros atalhos continuam no botão Atalhos.
+
+Leia CANAL-DARK.txt para começar. Leia VALIDACAO-DESKTOP.txt para saber exatamente o que foi testado. Roteiro/voz online exigem chave própria e crédito de API; não estão incluídos no download. A execução física no Windows ainda precisa ser confirmada no seu equipamento.

@@ -1,0 +1,59 @@
+CONEXÕES — CLIPA 3.9
+
+Nenhuma conta ou credencial está incluída. O Clipa não solicita sua senha das redes. Links de perfil ficam separados das credenciais; guardar um link não conecta nem publica nada.
+
+YOUTUBE
+1. No Google Cloud, crie um projeto e ative YouTube Data API v3.
+2. Configure a tela de consentimento e crie um cliente OAuth do tipo Aplicativo para computador (Desktop).
+3. Redes / IA → YouTube → Configurar integração: informe Client ID e Client Secret fornecidos para esse cliente.
+4. Salve e clique Conectar. Autorize no navegador e volte ao Clipa.
+Escopos: youtube.upload e youtube.readonly. A conta precisa ter um canal. Aplicativos ainda não verificados/auditados podem ter limitações, incluindo vídeos restritos a privado. Permissões de thumbnail também dependem da conta.
+Documentação: https://developers.google.com/youtube/v3/docs/videos/insert
+OAuth: https://developers.google.com/identity/protocols/oauth2/native-app
+
+TIKTOK
+1. Registre seu app no TikTok for Developers, com Login Kit para Desktop e Content Posting API / Direct Post.
+2. Cadastre o redirect Desktop: http://127.0.0.1:*/callback/
+3. Solicite user.info.basic e video.publish conforme o processo do TikTok.
+4. No Clipa, salve Client Key e Client Secret e clique Conectar.
+O app carrega a privacidade, nome e limite de duração atuais da conta antes de publicar. Apps sem auditoria têm restrições de conta e postagem privada. A aprovação do TikTok não é garantida pelo Clipa.
+Documentação: https://developers.tiktok.com/doc/login-kit-desktop/
+Publicação: https://developers.tiktok.com/doc/content-posting-api-get-started/
+Requisitos: https://developers.tiktok.com/doc/content-sharing-guidelines/
+
+INSTAGRAM
+Esta versão integra o upload direto de Reels pela API Meta com Facebook Login. Precisa de conta profissional ligada a uma Página e token autorizado do seu app Meta, com instagram_basic, instagram_content_publish e pages_read_engagement (e permissões adicionais que a configuração da conta exigir).
+Em Redes / IA → Instagram, informe o ID da conta profissional do Instagram e o token Meta autorizado. Clique Salvar configuração / Validar conta. O nome da conta só aparece depois de a API confirmar o acesso.
+Não há login OAuth do Instagram com um único botão nesta versão. O token é configurado manualmente e precisa ser renovado quando expirar. Não atende contas pessoais comuns nem o Instagram Basic Display descontinuado.
+Referência oficial de upload: https://github.com/fbsamples/reels_publishing_apis/tree/main/insta_reels_publishing_api_sample
+
+AGENDAMENTO
+A fila e os arquivos ficam no computador. Clipa precisa permanecer aberto, com o PC acordado e internet. Trabalhos atrasados mais de 10 minutos ficam em Reagendar. Upload interrompido ou resposta incerta exige conferir a rede; o app não cria uma segunda postagem automaticamente.
+Enviado = arquivo recebido, ainda sujeito a processamento/visibilidade. Publicado = confirmação recebida da plataforma ou registro manual pelo editor, identificado como tal.
+A aba lista envios feitos pelo Clipa. Não importa todo o histórico antigo dos canais.
+
+THUMBNAILS COM IA
+Em Redes / IA → IA de thumbnails, salve sua chave OpenAI API. O endpoint usado é Images Edits com gpt-image-2, 1536 × 864, JPEG, qualidade medium/high. O acesso e a cobrança pertencem à sua conta API; assinatura ChatGPT não fornece automaticamente essa chave nem inclui esses custos.
+O app envia o quadro escolhido, contexto textual e foto opcional somente após marcar a confirmação e clicar Gerar com IA. O vídeo inteiro não é enviado. Sem legendas, a imagem de referência pode não explicar o contexto inteiro; acrescente contexto ou instruções.
+Documentação: https://developers.openai.com/api/docs/guides/image-generation
+
+SEGURANÇA
+Tokens, chaves e configurações sensíveis são protegidos pelo safeStorage do Electron (cofre do sistema no Windows). Se o cofre estiver indisponível, a configuração é recusada. Nada deve ser colocado no código nem compartilhado dentro do ZIP. Para distribuição pública com credenciais centralizadas, é necessária uma infraestrutura de autenticação própria e aprovação das plataformas; este pacote é configurado por computador.
+
+
+ATUALIZAÇÃO 3.10 — ROTEIRO E VOZ
+A mesma chave OpenAI é usada para capas, análise visual e síntese de voz. Em Canal Dark, autorize envio de quadros/texto e cobrança, revise o roteiro e só então gere vozes. Leia CANAL-DARK.txt. Não é necessário configurar APIs sociais para editar, importar voz ou renderizar localmente.
+
+ATUALIZAÇÃO 3.11
+A publicação ganhou validação antes do envio, contadores, rascunhos por projeto,
+tags/idioma/categoria do YouTube e seleção de quadro de capa do TikTok.
+Título e descrição são unidos na legenda de TikTok/Instagram; o limite é
+verificado sobre o conjunto. No YouTube a descrição é verificada em bytes UTF-8.
+
+Revisar texto com IA usa gpt-4.1-mini e envia apenas as frases selecionadas e
+contexto. Exige autorização explícita no painel. Sugestões não são aplicadas
+sozinhas. O modelo não ouviu o áudio; revise a fidelidade.
+
+Minha voz · API envia o ID de uma voz personalizada já criada/autorizada na sua
+conta, não cria um clone. Usa a API de fala com as mesmas condições da conta.
+Templates mudam instruções de interpretação; não prometem imitar terceiros.

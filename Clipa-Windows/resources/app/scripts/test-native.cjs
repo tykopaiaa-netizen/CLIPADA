@@ -1,0 +1,41 @@
+'use strict';
+const vm=require('node:vm'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const handlers={},events={},sessionEvents={};let window,displayHandler,permission,permissionCheck,keyCallback,sourceScans=0;
+class Window{constructor(options){this.options=options;window=this;this.webContents={mainFrame:{url:'clipa://app/studio.html'},getURL:()=> 'clipa://app/studio.html',setWindowOpenHandler:fn=>this.open=fn,on:(n,f)=>events[n]=f,send:(...args)=>this.sent=args};}on(n,f){events[n]=f;}async loadURL(url){this.url=url;}setTitle(){}show(){}focus(){}restore(){}isDestroyed(){return false;}}
+const ses={setPermissionRequestHandler:f=>permission=f,setPermissionCheckHandler:f=>permissionCheck=f,setDisplayMediaRequestHandler:f=>displayHandler=f,on:(n,f)=>sessionEvents[n]=f};
+const source={id:'screen:1',name:'Screen',thumbnail:{toDataURL:()=> 'data:image/png;base64,'}};
+const electron={app:{requestSingleInstanceLock:()=>true,whenReady:()=>Promise.resolve(),on:()=>{},quit:()=>{},getPath:()=>'/tmp',getVersion:()=> '3.6.1'},BrowserWindow:Window,ipcMain:{handle:(n,f)=>handlers[n]=f},desktopCapturer:{getSources:async()=>{sourceScans++;return [source];}},session:{defaultSession:ses},protocol:{registerSchemesAsPrivileged:()=>{},handle:()=>{}},net:{fetch:async()=>new Response('')},globalShortcut:{register:(_k,f)=>{keyCallback=f;return true;},unregisterAll:()=>{}},dialog:{showMessageBoxSync:()=>0},powerSaveBlocker:{start:()=>1,stop:()=>{}}};
+vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../main.cjs'),'utf8'),{require:n=>n==='electron'?electron:n==='./native-media.cjs'?{makeMedia:()=>({init:async()=>{},busy:false,close:()=>{}})}:n==='./narrator.cjs'?require('../narrator.cjs'):n==='./publisher.cjs'?{makePublisher:()=>({init:async()=>{},close(){},busy:false}),externalURL(){},sanitizeError:e=>e.message}:require(n),__dirname:path.join(__dirname,'..'),process:{platform:'win32'},URL,Response,Headers,Date,console});
+(async()=>{
+ await new Promise(r=>setImmediate(r));
+ assert.equal(window.options.webPreferences.nodeIntegration,false);assert.equal(window.options.webPreferences.contextIsolation,true);assert.equal(window.options.webPreferences.sandbox,true);assert.equal(window.options.webPreferences.webSecurity,true);
+ const trusted={sender:window.webContents,senderFrame:window.webContents.mainFrame};
+ await assert.rejects(handlers['clipa:sources']({sender:{},senderFrame:{url:'https://evil.invalid'}}));
+ assert.throws(()=>handlers['clipa:cancel-capture']({sender:{}}));
+ assert.equal(permissionCheck(window.webContents,'media'),false);assert.equal(permissionCheck(window.webContents,'display-capture'),true);
+ handlers['clipa:microphone'](trusted,true);
+ assert.equal(permissionCheck(window.webContents,'media','clipa://app',{mediaType:'audio'}),true);assert.equal(permissionCheck(window.webContents,'media','clipa://app/',{mediaType:'audio'}),true);assert.equal(permissionCheck(window.webContents,'media','clipa://app.evil/',{mediaType:'audio'}),false);
+ assert.equal(permissionCheck(window.webContents,'media','clipa://app',{mediaType:'video'}),false);
+ let allowed;permission(window.webContents,'media',v=>allowed=v,{requestingUrl:'clipa://app/studio.html',isMainFrame:true,mediaTypes:['audio']});assert.equal(allowed,true);
+ permission(window.webContents,'media',v=>allowed=v,{requestingUrl:'https://evil.invalid',mediaTypes:['audio']});assert.equal(allowed,false);
+ handlers['clipa:microphone'](trusted,false);assert.equal(permissionCheck(window.webContents,'media','clipa://app',{mediaType:'audio'}),false);
+ let grant;const request={frame:window.webContents.mainFrame,audioRequested:true};
+ displayHandler(request,x=>grant=x);assert.equal(grant,null);
+ await handlers['clipa:sources'](trusted);assert.throws(()=>handlers['clipa:select'](trusted,{id:'invented',audio:true}));
+ permission(window.webContents,'media',v=>allowed=v,{requestingUrl:'clipa://app/studio.html',isMainFrame:true,mediaTypes:[]});assert.equal(allowed,false,'Screen media denied before choosing source');
+ handlers['clipa:select'](trusted,{id:'screen:1',audio:true});
+ permission(window.webContents,'media',v=>allowed=v,{requestingUrl:'clipa://app/studio.html',isMainFrame:true,mediaTypes:[]});assert.equal(allowed,true,'Electron display media uses an empty mediaTypes array');
+ permission(window.webContents,'media',v=>allowed=v,{requestingUrl:'clipa://app/studio.html',isMainFrame:true,mediaTypes:['video']});assert.equal(allowed,false,'Camera still denied with a selected screen');
+ permission(window.webContents,'media',v=>allowed=v,{requestingUrl:'clipa://app/studio.html',isMainFrame:false,mediaTypes:[]});assert.equal(allowed,false,'Subframe denied');
+ displayHandler({frame:{url:'https://evil.invalid'}},x=>grant=x);assert.equal(grant,null);
+ displayHandler(request,x=>grant=x);assert.equal(grant.video,source);assert.equal(grant.audio,'loopback');assert.equal(sourceScans,1,'Display request must not perform a second screen enumeration');
+ displayHandler(request,x=>grant=x);assert.equal(grant,null,'Grant is one-use');
+ // Retrying a failed capture needs a new selection, but does not need a new slow source scan.
+ handlers['clipa:select'](trusted,{id:'screen:1',audio:true});handlers['clipa:microphone'](trusted,true);handlers['clipa:cancel-capture'](trusted);
+ displayHandler(request,x=>grant=x);assert.equal(grant,null);assert.equal(permissionCheck(window.webContents,'media','clipa://app',{mediaType:'audio'}),false);
+ handlers['clipa:select'](trusted,{id:'screen:1',audio:false});displayHandler(request,x=>grant=x);assert.equal(grant.video,source);assert.equal(grant.audio,undefined);
+ handlers['clipa:select'](trusted,{id:'screen:1',audio:true});displayHandler({...request,audioRequested:false},x=>grant=x);assert.equal(grant.audio,undefined);
+ let prevented=false;events['will-navigate']({preventDefault:()=>prevented=true},'https://evil.invalid');assert(prevented);assert.equal(window.open().action,'deny');
+ handlers['clipa:state'](trusted,{recording:false,busy:true});window.sent=null;keyCallback();assert.equal(window.sent,null);events['did-navigate']();await handlers['clipa:sources'](trusted);keyCallback();assert.equal(window.sent[0],'clipa:toggle','Reload must clear stale busy/capture state');
+ console.log('PASS native contract: sandbox; trusted frame; microphone scoped; camera denied; cached screen; one-use consent; retry; cancellation; audio options; navigation; busy shortcut.');
+})().catch(e=>{console.error(e);process.exit(1)});

@@ -1,0 +1,633 @@
+{
+  "layouts321": {
+    "presets": 15,
+    "swap": true,
+    "undoRedo": true,
+    "timeline": true,
+    "project": true,
+    "gesture": true,
+    "errors": []
+  },
+  "extras321": {
+    "divider": true,
+    "backgroundModal": true,
+    "laneMove": true,
+    "undo": true,
+    "overlapGuard": true,
+    "errors": []
+  },
+  "render321": [
+    {
+      "mode": "wide",
+      "preset": "pip",
+      "res": "720",
+      "fps": 60,
+      "size": {
+        "w": 1280,
+        "h": 720
+      },
+      "frames": "36",
+      "stats": {
+        "fps": 60,
+        "frames": 36,
+        "changedFrames": 36,
+        "decodedFrames": 36,
+        "heldFrames": 0,
+        "seconds": 3.1675,
+        "decoder": "FFmpeg sequencial"
+      }
+    },
+    {
+      "mode": "wide",
+      "preset": "circle",
+      "res": "1080",
+      "fps": 30,
+      "size": {
+        "w": 1920,
+        "h": 1080
+      },
+      "frames": "18",
+      "stats": {
+        "fps": 30,
+        "frames": 18,
+        "changedFrames": 18,
+        "decodedFrames": 18,
+        "heldFrames": 0,
+        "seconds": 2.9292000000001863,
+        "decoder": "FFmpeg sequencial"
+      }
+    },
+    {
+      "mode": "short",
+      "preset": "top",
+      "res": "720",
+      "fps": 60,
+      "size": {
+        "w": 720,
+        "h": 1280
+      },
+      "frames": "36",
+      "stats": {
+        "fps": 60,
+        "frames": 36,
+        "changedFrames": 36,
+        "decodedFrames": 36,
+        "heldFrames": 0,
+        "seconds": 1.975,
+        "decoder": "FFmpeg sequencial"
+      }
+    },
+    {
+      "mode": "short",
+      "preset": "bottom",
+      "res": "1080",
+      "fps": 30,
+      "size": {
+        "w": 1080,
+        "h": 1920
+      },
+      "frames": "18",
+      "stats": {
+        "fps": 30,
+        "frames": 18,
+        "changedFrames": 18,
+        "decodedFrames": 18,
+        "heldFrames": 0,
+        "seconds": 1.9180999999996275,
+        "decoder": "FFmpeg sequencial"
+      }
+    },
+    {
+      "mode": "short",
+      "preset": "three",
+      "res": "480",
+      "fps": 30,
+      "size": {
+        "w": 480,
+        "h": 854
+      },
+      "frames": "18",
+      "stats": {
+        "fps": 30,
+        "frames": 18,
+        "changedFrames": 18,
+        "decodedFrames": 18,
+        "heldFrames": 0,
+        "seconds": 0.796,
+        "decoder": "FFmpeg sequencial"
+      }
+    },
+    {
+      "mode": "composition",
+      "preset": "banner",
+      "res": "720",
+      "fps": 30,
+      "size": {
+        "w": 1280,
+        "h": 720
+      },
+      "frames": "18",
+      "stats": {
+        "fps": 30,
+        "frames": 18,
+        "changedFrames": 18,
+        "decodedFrames": 18,
+        "heldFrames": 0,
+        "seconds": 1.3235,
+        "decoder": "FFmpeg sequencial"
+      }
+    },
+    {
+      "mode": "composition",
+      "preset": "banner-vertical",
+      "res": "720",
+      "fps": 30,
+      "size": {
+        "w": 720,
+        "h": 1280
+      },
+      "frames": "18",
+      "stats": {
+        "fps": 30,
+        "frames": 18,
+        "changedFrames": 18,
+        "decodedFrames": 18,
+        "heldFrames": 0,
+        "seconds": 1.6495,
+        "decoder": "FFmpeg sequencial"
+      }
+    },
+    {
+      "mode": "wide",
+      "preset": "blur",
+      "res": "720",
+      "fps": 30,
+      "size": {
+        "w": 1280,
+        "h": 720
+      },
+      "frames": "18",
+      "stats": {
+        "fps": 30,
+        "frames": 18,
+        "changedFrames": 18,
+        "decodedFrames": 18,
+        "heldFrames": 0,
+        "seconds": 2.2022999999998136,
+        "decoder": "FFmpeg sequencial"
+      }
+    },
+    {
+      "mode": "wide",
+      "preset": "trio",
+      "res": "720",
+      "fps": 30,
+      "size": {
+        "w": 1280,
+        "h": 720
+      },
+      "frames": "18",
+      "stats": {
+        "fps": 30,
+        "frames": 18,
+        "changedFrames": 18,
+        "decodedFrames": 18,
+        "heldFrames": 0,
+        "seconds": 1.7475,
+        "decoder": "FFmpeg sequencial"
+      }
+    }
+  ],
+  "pixel-comparison321": [
+    {
+      "case": 0,
+      "mean_channel_error": 2.346,
+      "percent_pixels_error_over_25": 3.073
+    },
+    {
+      "case": 1,
+      "mean_channel_error": 2.306,
+      "percent_pixels_error_over_25": 2.906
+    },
+    {
+      "case": 2,
+      "mean_channel_error": 2.26,
+      "percent_pixels_error_over_25": 2.531
+    },
+    {
+      "case": 3,
+      "mean_channel_error": 2.26,
+      "percent_pixels_error_over_25": 2.663
+    },
+    {
+      "case": 4,
+      "mean_channel_error": 2.562,
+      "percent_pixels_error_over_25": 2.791
+    },
+    {
+      "case": 5,
+      "mean_channel_error": 2.252,
+      "percent_pixels_error_over_25": 1.459
+    },
+    {
+      "case": 6,
+      "mean_channel_error": 2.388,
+      "percent_pixels_error_over_25": 2.153
+    },
+    {
+      "case": 7,
+      "mean_channel_error": 1.694,
+      "percent_pixels_error_over_25": 1.311
+    },
+    {
+      "case": 8,
+      "mean_channel_error": 2.282,
+      "percent_pixels_error_over_25": 2.593
+    }
+  ],
+  "clipboard319": {
+    "intervals": [
+      [
+        0,
+        0.75
+      ],
+      [
+        0.75,
+        1.5
+      ],
+      [
+        1.5,
+        2.25
+      ],
+      [
+        2.25,
+        3
+      ],
+      [
+        3,
+        3.75
+      ],
+      [
+        3.75,
+        4
+      ]
+    ],
+    "rms": [
+      0.12496457297478579,
+      0.12496114933453935,
+      0.12486550122766553,
+      0.12496097440118221,
+      0.12485861127658808,
+      0.12492102173756142
+    ],
+    "errors": []
+  },
+  "camera319": {
+    "basic": {
+      "keys": [
+        "inline"
+      ],
+      "rect": {
+        "x": 0.38300000594349837,
+        "y": 0.2179999861684863,
+        "w": 0.3050000480051791,
+        "h": 0.36300000922100917
+      },
+      "time": 8,
+      "strict": 129913,
+      "normal": 129913,
+      "status": "Fundo removido · 1 câmera(s). Ajuste Borda e Suavidade se necessário."
+    },
+    "stats": {
+      "reduced": 498,
+      "kept": 35698,
+      "total": 129913
+    },
+    "diff": {
+      "inside": 97758,
+      "outside": 0
+    },
+    "errors": []
+  },
+  "exports319": [
+    {
+      "mode": "wide",
+      "resolution": {
+        "w": 1280,
+        "h": 720
+      },
+      "sourceRange": [
+        0,
+        4
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 240,
+      "changedFrames": 240,
+      "decodedFrames": 240,
+      "heldFrames": 0,
+      "seconds": 19.49889999999944,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "short0",
+      "resolution": {
+        "w": 1080,
+        "h": 1920
+      },
+      "sourceRange": [
+        0,
+        0.3
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 18,
+      "changedFrames": 18,
+      "decodedFrames": 18,
+      "heldFrames": 0,
+      "seconds": 2.198,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "wide",
+      "resolution": {
+        "w": 3840,
+        "h": 2160
+      },
+      "sourceRange": [
+        0,
+        0.1
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 6,
+      "changedFrames": 6,
+      "decodedFrames": 6,
+      "heldFrames": 0,
+      "seconds": 2.281299999999814,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "wide",
+      "resolution": {
+        "w": 1280,
+        "h": 720
+      },
+      "sourceRange": [
+        0.5,
+        2.5
+      ],
+      "speed": 2,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 60,
+      "changedFrames": 60,
+      "decodedFrames": 60,
+      "heldFrames": 0,
+      "seconds": 3.810200000000186,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "wide",
+      "resolution": {
+        "w": 1280,
+        "h": 720
+      },
+      "sourceRange": [
+        1,
+        1.5
+      ],
+      "speed": 0.5,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 60,
+      "changedFrames": 30,
+      "decodedFrames": 60,
+      "heldFrames": 0,
+      "seconds": 3.9125999999996273,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "short1",
+      "resolution": {
+        "w": 720,
+        "h": 1280
+      },
+      "sourceRange": [
+        0,
+        0.1
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 6,
+      "changedFrames": 6,
+      "decodedFrames": 6,
+      "heldFrames": 0,
+      "seconds": 0.7622000000001863,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "short2",
+      "resolution": {
+        "w": 720,
+        "h": 1280
+      },
+      "sourceRange": [
+        0,
+        0.1
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 6,
+      "changedFrames": 6,
+      "decodedFrames": 6,
+      "heldFrames": 0,
+      "seconds": 0.6787000000001863,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "composition",
+      "resolution": {
+        "w": 1920,
+        "h": 1080
+      },
+      "sourceRange": [
+        0,
+        0.1
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 6,
+      "changedFrames": 6,
+      "decodedFrames": 6,
+      "heldFrames": 0,
+      "seconds": 0.8989000000003725,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "compositionVertical",
+      "resolution": {
+        "w": 720,
+        "h": 1280
+      },
+      "sourceRange": [
+        0,
+        0.1
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 6,
+      "changedFrames": 6,
+      "decodedFrames": 6,
+      "heldFrames": 0,
+      "seconds": 0.5700999999996275,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "dark",
+      "resolution": {
+        "w": 1280,
+        "h": 720
+      },
+      "sourceRange": [
+        0,
+        0.1
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 6,
+      "changedFrames": 6,
+      "decodedFrames": 6,
+      "heldFrames": 0,
+      "seconds": 0.7347999999998137,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "darkVertical",
+      "resolution": {
+        "w": 720,
+        "h": 1280
+      },
+      "sourceRange": [
+        0,
+        0.1
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 6,
+      "changedFrames": 6,
+      "decodedFrames": 6,
+      "heldFrames": 0,
+      "seconds": 0.6010999999996275,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "wide",
+      "resolution": {
+        "w": 426,
+        "h": 240
+      },
+      "sourceRange": [
+        0,
+        0.2
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 12,
+      "changedFrames": 12,
+      "decodedFrames": 12,
+      "heldFrames": 0,
+      "seconds": 0.6272999999998138,
+      "decoder": "FFmpeg sequencial"
+    },
+    {
+      "mode": "wide",
+      "resolution": {
+        "w": 2560,
+        "h": 1440
+      },
+      "sourceRange": [
+        0,
+        0.2
+      ],
+      "speed": 1,
+      "video": "h264",
+      "audio": "aac",
+      "fps": 60,
+      "frames": 12,
+      "changedFrames": 12,
+      "decodedFrames": 12,
+      "heldFrames": 0,
+      "seconds": 2.1812999999998137,
+      "decoder": "FFmpeg sequencial"
+    }
+  ],
+  "review": {
+    "chapters": [
+      {
+        "id": "01-inicio",
+        "duration": 14.619,
+        "frames": 39
+      },
+      {
+        "id": "02-modelos",
+        "duration": 17.668,
+        "frames": 92
+      },
+      {
+        "id": "03-selecao",
+        "duration": 13.427,
+        "frames": 209
+      },
+      {
+        "id": "04-ajuste",
+        "duration": 12.652,
+        "frames": 150
+      },
+      {
+        "id": "05-fundo",
+        "duration": 15.762,
+        "frames": 176
+      },
+      {
+        "id": "06-timeline",
+        "duration": 14.32,
+        "frames": 141
+      },
+      {
+        "id": "07-dark",
+        "duration": 15.128,
+        "frames": 103
+      },
+      {
+        "id": "08-export",
+        "duration": 24.931,
+        "frames": 333
+      }
+    ],
+    "errors": []
+  },
+  "platform": "Linux virtual desktop; Electron 44.7.0; Windows hardware not tested"
+}

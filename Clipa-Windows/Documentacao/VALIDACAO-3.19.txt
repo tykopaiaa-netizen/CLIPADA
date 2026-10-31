@@ -1,0 +1,72 @@
+VALIDAÇÃO DA REVISÃO 3.19
+
+Ambiente: Electron 44.7.0 em Linux, tela virtual, renderização por CPU,
+FFmpeg nativo do ambiente. Modelos MediaPipe locais reais. Arquivos MP4
+conferidos com ffprobe, decodificação de quadros e análise de áudio.
+Não houve execução física do .exe no Windows nesta sessão.
+
+EXPORTAÇÃO
+- Vídeo sintético de movimento: 4 s, 1280 x 720, 60 fps, 240 quadros
+  distintos no MP4; H.264 + AAC. Nenhum quadro retido pelo fallback do app.
+- Saídas curtas horizontais/verticais em 720p, 1080p e 4K60.
+- Montagem removendo 1–3 s de uma fonte de 4 s: MP4 de 2 s com 120 quadros;
+  o instante 3,5 s da fonte correspondeu a 1,5 s na saída.
+- Velocidades 0,5x e 2x: contagem de quadros e duração coerentes.
+- Horizontal, vertical livre, uma câmera, duas câmeras, composição nas duas
+  orientações e Canal Dark nas duas orientações: exportações H.264/AAC.
+- Com remoção de fundo: oito combinações de modelo/orientação; 60 quadros
+  no horizontal de 1 s e 6 quadros nos demais testes de 0,1 s.
+- Cancelar a exportação remove o arquivo parcial; uma nova tentativa conclui.
+
+CÂMERA
+- Seleção por arraste na gravação original fornecida, no modo horizontal.
+- Dois modelos reais retornaram a máscara; refinamento reduziu áreas ao redor
+  da pessoa. Conferência visual manteve rosto, óculos, boné e fone neste exemplo.
+- Comparação de pixels: nenhuma mudança fora da área selecionada, com margem
+  de 2 pixels nas bordas para a antisserrilha. Transparência conferida na saída.
+- Borracha, restaurar e desfazer: alfa 0, 255 e 0 no ponto de teste.
+- Ajustes independentes por modo, cancelamento da janela, mudança de precisão
+  exigindo novo cálculo, avanço de tempo, reprodução e reabertura de projeto.
+- Falha de modelo simulada mostra erro e permite nova tentativa. Cancelamento
+  da inicialização limpa a tarefa. Abrir outra fonte limpa máscaras antigas.
+- Janela inspecionada em 1440 x 900, 1366 x 600 e 390 x 844. A largura estreita
+  usa rolagem interna; não é validação de um app nativo para celular.
+
+CAPTURA
+- MediaRecorder real com vídeo sintético de movimento e dois sinais de áudio
+  independentes, passando pelo fluxo do seletor, mixagem e gravação em disco.
+- Gravação com janela escondida: 291 quadros em 5,0142 s, aproximadamente
+  57,84 fps; maior intervalo entre quadros de 0,0321 s neste teste.
+- As duas frequências de teste (440 e 1320 Hz) estavam presentes no arquivo.
+- Erro de microfone, falta de áudio do computador, inventário de dispositivos
+  sem resposta, cancelamento com retorno tardio e timeout de 15 s do microfone.
+- Esta captura é sintética: não mede jogos, microfones físicos, áudio loopback
+  do Windows ou os drivers da GPU do usuário.
+
+TIMELINE E ÁUDIO
+- Ctrl+C/V de seleção parcial conserva offset e cola na mesma faixa.
+- Arrastar a segunda cópia, dividir com S, desfazer e reabrir projeto.
+- Shift sobre uma cópia ainda não selecionada: copiar e excluir atingem o
+  bloco correto; os vizinhos ficam intactos e continuam na mesma faixa.
+- Repetição de um som de 0,75 s até 4 s: seis blocos em uma única faixa.
+- Áudio efetivamente presente nos seis trechos exportados. RMS entre 0,12485
+  e 0,12497 no sinal de teste; nenhuma cópia ficou silenciosa.
+- Testes de núcleo de cortes, geometria/proporção, ordenação de camadas e
+  leitura/escrita nativa reaplicados. Validação de IDs, limites de decodificação,
+  quadros fora de ordem, final da fonte e cancelamento também passou.
+
+O ORIGINAL DISPONÍVEL
+clipa-original.webm tem 1827 quadros, média aproximada de 28,3 fps e uma lacuna
+de até 0,65 s nos tempos da fonte. É o arquivo antigo disponível nesta sessão;
+não foi assumido como gravação da versão Windows atual. Exportar em 60 fps
+repete quadros onde faltam amostras: isso não cria o movimento que não foi gravado.
+Um arquivo marcar 60 fps, sozinho, não comprova fluidez. Por isso o teste de
+movimento também comparou os quadros decodificados, não só os metadados.
+
+LIMITES DA VALIDAÇÃO
+Não é prova de ausência de todos os bugs. Não foram executadas gravações de
+horas, importações físicas de 30 GB, testes de todos os codecs ou de todas as
+GPUs. Não foi validada nesta revisão a publicação nas redes nem cada serviço
+de IA online. O foco foi câmera, captura, exportação e repetição de mídias.
+O pacote Windows preserva o runtime e o FFmpeg distribuídos na base 3.18;
+o código 3.19 e os modelos/bundles necessários foram verificados no ZIP.

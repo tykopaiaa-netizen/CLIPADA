@@ -1,0 +1,10 @@
+(function(root){'use strict';
+ const clamp=(n,a,b)=>Math.max(a,Math.min(b,Number(n)||0));
+ function intervals(items,d){const all=(items||[]).slice(0,1000).filter(r=>Number.isFinite(r?.start)&&Number.isFinite(r?.end)).map(r=>({start:clamp(r.start,0,d),end:clamp(r.end,0,d)})).filter(r=>r.end>r.start).sort((a,b)=>a.start-b.start),out=[];for(const r of all){const p=out.at(-1);if(p&&r.start<=p.end+.00001)p.end=Math.max(p.end,r.end);else out.push(r);}return out;}
+ function kept(start,end,removed=[]){let cursor=start;const out=[];for(const r of intervals(removed,end)){if(r.end<=start)continue;if(r.start>cursor)out.push({start:cursor,end:Math.min(end,r.start)});cursor=Math.max(cursor,r.end);}if(cursor<end)out.push({start:cursor,end});return out.filter(r=>r.end-r.start>.00001);}
+ function plan(start,end,removed=[],speed=1){let total=0;const spans=kept(start,end,removed).map(r=>{const s={...r,at:total};total+=(r.end-r.start)/speed;s.until=total;return s;});return {spans,duration:total};}
+ function sourceAt(p,t,speed=1){const s=p.spans.find(s=>t<s.until-1e-9)||p.spans.at(-1);return s?Math.min(s.end,s.start+Math.max(0,t-s.at)*speed):0;}
+ function normalize(s,d){const tracks={};for(const [key,v]of Object.entries(s?.tracks||{}).slice(0,100))if(/^[a-zA-Z0-9:_-]{1,160}$/.test(key))tracks[key]={name:String(v?.name||'Faixa').slice(0,80),color:/^#[\da-f]{6}$/i.test(v?.color||'')?v.color:'#697a92'};return {version:1,removed:intervals(s?.removed,d),splits:[...new Set((s?.splits||[]).filter(t=>Number.isFinite(t)&&t>0&&t<d))].sort((a,b)=>a-b).slice(0,999),tracks};}
+ function subtractClip(item,start,end){if(item.end<=start||item.start>=end)return [item];const out=[];if(item.start<start)out.push({...item,end:start,fadeOut:0});if(item.end>end)out.push({...item,id:crypto.randomUUID(),start:end,offset:(item.offset||0)+(['sound','video'].includes(item.kind)?end-item.start:0),fadeIn:0});return out;}
+ const api={intervals,kept,plan,sourceAt,normalize,subtractClip};root.ClipaEditCore=api;if(typeof module!=='undefined')module.exports=api;
+})(typeof window!=='undefined'?window:globalThis);

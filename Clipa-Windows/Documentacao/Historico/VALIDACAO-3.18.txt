@@ -1,0 +1,54 @@
+CLIPA 3.18 — VALIDAÇÃO
+
+Ambiente: Electron 44.7.0 / Linux, tela virtual, modelos locais reais e
+FFmpeg nativo local. A execução do .exe, dispositivos e drivers no Windows
+físico NÃO foi testada nesta revisão. O runtime Windows é o da 3.17.
+
+BUGS REPRODUZIDOS
+- O atalho visual Remover fundo não marcava nem executava o filtro.
+- Uma única imagem continuava sobre a câmera depois de Para trás.
+
+TESTES EXECUTADOS
+- Remoção real no WebM fornecido: máscara com regiões opacas e transparentes,
+  primeiro quadro processado, recorte inspecionado visualmente.
+- Modelo detalhado com entrada proporcional (469x277 no recorte testado),
+  sem esticar a pessoa antes de inferir a máscara.
+- Botão próximo do enquadramento, comparação com o original e restauração.
+- Banner atrás do original e câmera, retornar à frente, Usar como fundo.
+  A ordem foi conferida também pelos pixels da composição.
+- Troca de posição da própria câmera na pilha e desfazer.
+- Salvar/reabrir preserva ordem, mídias e remoção de fundo ativada.
+- Mensagem quando falta selecionar uma câmera ou se está no modo horizontal.
+- Cancelar inicialização da IA e tentar novamente.
+- Caminho real de timeout com temporizador reduzido no teste: erro visível,
+  filtro desativado, sem repetição automática infinita.
+- Falha de inferência simulada: mensagem útil, filtro desligado, recuperação.
+- Buscar outro tempo e reproduzir: máscara acompanha o tempo da fonte.
+- Duas câmeras: uma em Encaixar e a outra em Preencher.
+- Cancelar exportação durante a inferência: arquivo parcial removido.
+- Reabrir a fonte limpa máscaras e estado anteriores.
+- Janelas 1440x900, 1366x600, 800x600 e 390x844: sem transbordamento horizontal.
+- Testes de núcleo: migração sem ordem anterior, quatro operações de
+  empilhamento, mil movimentações, sem duplicação ou IDs inválidos.
+- Limpeza de alpha preserva RGB e o componente principal da pessoa.
+
+MP4 COM IA ATIVA
+- Composição horizontal 1920x1080, 60 fps, H.264/AAC: 12 quadros (0,2 s).
+- Vertical com duas câmeras 720x1280, 60 fps, H.264/AAC: 9 quadros (0,15 s).
+- Quadro exportado inspecionado após decodificar o MP4.
+
+REGRESSÃO DE COMPOSIÇÃO
+Mais 8 MP4 de 18 quadros cada em 60 fps e com AAC, cobrindo horizontal,
+vertical livre/1 câmera/2 câmeras, composição horizontal/vertical e Canal
+Dark horizontal/vertical. Resoluções 720p e 1080p.
+Sem exceções do renderer nos testes executados. Sintaxe conferida em todos
+os scripts de primeiro nível do renderer.
+
+Os clipes curtos validam estes bugs; não constituem teste de horas de vídeo,
+de todos os codecs ou de todas as pessoas/cenários. A precisão da máscara
+varia conforme o material. Captura, microfone e publicação não foram
+retestados, pois não foram alterados nesta revisão.
+
+REFERÊNCIAS TÉCNICAS CONSULTADAS
+https://developers.google.com/edge/mediapipe/solutions/vision/image_segmenter/web_js
+https://developers.google.com/edge/mediapipe/solutions/vision/image_segmenter

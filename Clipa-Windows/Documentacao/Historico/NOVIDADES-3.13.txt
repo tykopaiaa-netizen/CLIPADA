@@ -1,0 +1,45 @@
+CLIPA 3.13 — ÁUDIO POR TRECHO E QUALIDADE
+
+ÁUDIO
+• O vídeo começa com sua faixa de vídeo. + Áudio revela a faixa de áudio.
+• Trecho: De/Até → Isolar trecho. Cada bloco tem sua própria bolinha de volume.
+  Arraste para cima/baixo; Shift dá ajuste fino; duplo clique zera em 0 dB.
+  Setas na bolinha ajustam 0,5 dB. Arraste as bordas para aparar o bloco.
+  Aparar áudio mantém o vídeo e os outros blocos no mesmo tempo; o espaço fica silencioso.
+• Dividir no cursor: Alt+B. Fades e Silenciar afetam o bloco selecionado.
+• À esquerda: M silencia a faixa original inteira; FX abre os ajustes da faixa.
+• Voz / música: separação local Spleeter. Até 60 s por análise, até 5 min separados
+  por projeto. As fontes substituem o original no intervalo, sem som duplicado.
+  Não identifica direitos autorais nem separa perfeitamente todas as vozes/músicas.
+  Voz pode incluir canto; Instrumental pode conter resíduos de fala.
+• Mix / master é opcional: equalização, compressor, ganho e limitador de dinâmica.
+  Não é medidor de LUFS ou limitador true peak. Começa desligado.
+• Volume por bloco, fontes separadas e master são salvos no projeto e entram no MP4.
+  Com mixagem/edição de áudio, exporte até 10 min por parte na fonte e na saída.
+• Faixas de áudio, legendas, cortes e bandeiras aparecem quando têm conteúdo.
+
+QUALIDADE
+• Gravação: Original ou 144/240/360/480/720/1080/1440/2160/4320p.
+  O tamanho solicitado respeita a proporção da tela e não amplia a captura.
+  O valor real depende do sistema e aparece ao iniciar.
+• Gravação e exportação: Econômica, Equilibrada, Alta ou Máxima.
+• Exportação: de 144p até 8K, ou Original no modelo horizontal.
+  Perfis YouTube/Twitch são pontos de partida para arquivos, não transmissão.
+• O resumo mostra pixels, FPS, bitrate estimado e tamanho aproximado.
+  8K requer codificador nativo compatível; verifique suporte antes.
+  Sem GPU/codificador adequado, use 1080p ou 720p; CPU compatível segue disponível.
+• Mais resolução não cria detalhes perdidos. FPS acima da fonte repete quadros.
+  Captura máxima e IA usam mais memória e tempo. Não há promessa de desempenho.
+
+PRÉVIA
+• Ajuste preciso mantém as medidas digitadas ao mudar de campo até clicar em Aplicar.
+• Áudio, IA, legendas e exportação dão mais espaço ao resultado.
+• Original + resultado volta à comparação; ↕ Faixas aumenta a timeline.
+• Mostrar tudo preserva a seleção. Preencher recorta o excesso para ocupar a saída.
+  A área cinza fora do quadro não entra no MP4; barras dentro dele entram.
+
+EXEMPLO
+Abra o vídeo de teste. Extraia o áudio. De 3 / Até 6 → Isolar trecho.
+Selecione o bloco central e arraste a bolinha para −12 dB. Exporte 720p60.
+Depois experimente Voz / música no mesmo intervalo e reduza só Instrumental.
+Salve o projeto, reabra pela Biblioteca e confira os ajustes.

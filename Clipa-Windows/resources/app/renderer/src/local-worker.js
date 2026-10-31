@@ -1,0 +1,5 @@
+export class LocalWorker {
+ constructor(cancelled=()=>false){this.cancelled=cancelled;this.worker=new Worker(new URL('../vendor/software-worker.js',import.meta.url));this.requests=new Map();this.nextId=0;this.worker.onmessage=({data})=>{const q=this.requests.get(data.id);if(!q)return;this.requests.delete(data.id);clearTimeout(q.timer);clearInterval(q.poll);data.error?q.reject(Error(data.error)):q.resolve(data);};this.worker.onerror=e=>this.close(Error(e.message||'Falha no renderizador local.'));}
+ call(data,transfer=[]){const id=++this.nextId;return new Promise((resolve,reject)=>{const timer=setTimeout(()=>this.close(Error('O processamento local excedeu 2 minutos sem responder. Tente um trecho ou resolução menor.')),120000);const poll=setInterval(()=>{if(this.cancelled())this.close(Error('Cancelado'));},150);this.requests.set(id,{resolve,reject,timer,poll});this.worker.postMessage({id,...data},transfer);});}
+ close(error=Error('Renderização encerrada.')){this.worker.terminate();for(const q of this.requests.values()){clearTimeout(q.timer);clearInterval(q.poll);q.reject(error);}this.requests.clear();}
+}

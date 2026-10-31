@@ -1,0 +1,20 @@
+GUIA DETALHADO CLIPA 3.12
+
+Clipa-Guia-Detalhado-3.12.mp4 é entregue separadamente do aplicativo.
+24 capítulos mostram a interface real, com narração sintética em português:
+1 Início; 2 Biblioteca e desempenho; 3 Preparar gravação; 4 Teste de microfone;
+5 Importar; 6 Recorte horizontal; 7 Tempo; 8 Timeline; 9 Cortes manuais;
+10 Bandeiras e assistente; 11 Legendas; 12 Revisão; 13 Cortes por IA;
+14 Vertical; 15 Câmera e animação; 16 Composição; 17 Movimento; 18 Áudio;
+19 Canal Dark; 20 Acabamento e thumbnail; 21 Exportar; 22 Publicar; 23 Concluir; 24 Ampliar a prévia.
+
+O guia executa transcrição, sugestões de corte e exportação reais. Na gravação,
+mostra configuração e teste; não demonstra um microfone físico Windows.
+Publicação mostra formulário e rascunho, sem envio para uma conta real.
+
+Clipa-Exemplos-3.12.zip inclui seis MP4s exportados pelo app, original sintético,
+fundo, legenda revisada e CAPITULOS-DO-GUIA.txt com os tempos do tutorial.
+
+Narração: Piper pt_BR-faber-medium; conjunto de dados declarado CC0.
+https://huggingface.co/rhasspy/piper-voices/tree/main/pt/pt_BR/faber/medium
+O gerador do tutorial não foi incorporado ao aplicativo Windows.

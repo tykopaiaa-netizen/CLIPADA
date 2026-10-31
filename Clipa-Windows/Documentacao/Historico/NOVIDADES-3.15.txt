@@ -1,0 +1,20 @@
+CLIPA 3.15
+
+- Seleção vermelha com Shift + arrastar, incluindo botão direito, com excluir,
+  manter somente o intervalo, IA e desfazer. Cortes entram na prévia e no MP4.
+- Divisão de vídeo, áudio e mídias; nomes e cores das faixas editáveis.
+- Legendas arrastáveis na prévia, análise por blocos e relatório de cobertura.
+- Corrigida a falsa detecção automática de idioma que usava inglês por padrão.
+- Tentativa adicional com o último idioma reconhecido quando um bloco automático
+  fica sem texto, sem inventar uma legenda de preenchimento.
+- Melhor busca de rostos pequenos e acesso visível às ferramentas de câmera.
+- Cortes gerados preservados entre modos, com ajustes de enquadramento por corte.
+- Importação de vários vídeos para projetos separados em horizontal/vertical.
+- Ampliar mantém as faixas; onda de áudio visível em gravações maiores que 60 s.
+- Correção do conflito Ctrl+Z e alinhamento da régua com as faixas.
+- Divisória da composição desligada por padrão; movimento e pausa no topo editáveis.
+- Restrições de memória e cancelamento mantidos; gravação não foi redesenhada.
+
+- Abertura do vídeo completo, sem o antigo intervalo inicial de 60 segundos.
+- Manter ajusta o intervalo de saída; estimativas descontam o tempo excluído.
+- A exportação nativa lê somente os trechos mantidos, com contexto de decodificação.

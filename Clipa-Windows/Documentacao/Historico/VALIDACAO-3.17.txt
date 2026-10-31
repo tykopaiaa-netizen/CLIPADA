@@ -1,0 +1,45 @@
+CLIPA 3.17 — VERIFICAÇÕES DESTA REVISÃO
+
+Executadas em Electron 44.7.0 / Linux com tela virtual e FFmpeg local.
+O pacote de Windows preserva o runtime e o motor nativo da versão 3.16.
+Não executamos o Clipa.exe em um Windows físico nesta revisão. Drivers,
+captura de dispositivos, áudio do sistema e atalhos globais no Windows
+não foram revalidados. Não há garantia de ausência total de defeitos.
+
+GEOMETRIA
+- 1.000 conjuntos de valores: limites, soma das alturas, espaço do conteúdo.
+- Alças nos quatro cantos: relação de aspecto e permanência dentro da tela.
+- Conversão entre proporção da seleção e saída 16:9/9:16.
+- Vídeo de teste com círculo: círculos continuam circulares nos 8 MP4.
+
+INTERFACE REAL
+- Ajuste independente das duas câmeras pelo controle e pela divisão.
+- Cálculo da altura usando o recorte original; Encaixar / Preencher.
+- Zoom da visualização não altera a assinatura de renderização do projeto.
+- Troca de modelo, salvar/reabrir pelo IndexedDB, desfazer transformação.
+- Redimensionar com trava e sem trava, proporção natural e câmera composta.
+- Imagem sobreposta com proporção travada; abertura do WebM enviado.
+- Geometria individual mantida ao alternar entre dois cortes.
+- Abertura dos painéis de mídia, enquadramento, cortes, legendas, áudio,
+  efeitos, narração e exportação sem perder a prévia.
+- Janelas: 1440x900, 1366x600, 1024x768, 800x600 e 390x844.
+  Sem transbordamento horizontal; proporção da prévia preservada.
+- Sem exceções do renderer nos cenários acima.
+
+EXPORTAÇÕES NOVAS
+8 MP4 curtos de 0,3 s / 18 quadros cada, H.264, AAC e 60 fps:
+- Horizontal: 1280x720.
+- Vertical livre: 720x1280.
+- Vertical com uma câmera: 1080x1920.
+- Vertical com duas câmeras: 720x1280.
+- Câmera + fundo horizontal: 1280x720.
+- Câmera + fundo vertical: 1080x1920.
+- Canal Dark horizontal: 1280x720.
+- Canal Dark vertical: 720x1280.
+Dimensões, quantidade de quadros, FPS e trilha AAC conferidos por ffprobe.
+Aspecto dos círculos conferido nos pixels decodificados do MP4.
+
+Os testes curtos verificam a regressão de enquadramento, não a estabilidade
+de renderizações de horas. Os testes anteriores e as limitações de outras
+funções estão no histórico 3.16. Não houve nova avaliação da precisão das
+IAs nem publicação em redes sociais nesta revisão.

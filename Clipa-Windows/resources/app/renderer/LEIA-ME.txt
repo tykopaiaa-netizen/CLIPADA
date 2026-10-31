@@ -1,0 +1,4 @@
+Esta pasta contém o editor do Clipa Desktop 3.0.
+Para usar, abra Clipa.exe na pasta principal do pacote Windows.
+Não instale esta pasta como extensão. Consulte COMO-ABRIR.txt na pasta principal.
+A documentação técnica de renderização e as licenças estão neste diretório.

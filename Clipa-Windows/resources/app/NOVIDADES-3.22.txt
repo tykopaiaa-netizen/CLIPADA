@@ -1,0 +1,56 @@
+CLIPA STUDIO 3.22 — WINDOWS PORTÁTIL
+
+Extraia TODO o ZIP e abra Clipa-Windows/Clipa.exe.
+Mantenha os outros arquivos na mesma pasta. Use a pasta nova desta versão.
+Não precisa de Brave, Node.js ou de uma extensão.
+
+A ESTRUTURA FOI MANTIDA
+Horizontal, Vertical, Câmera + fundo e Canal Dark continuam disponíveis,
+com os 15 modelos, timeline, áudio, camadas, gravação e ferramentas da 3.21.
+
+NOVO: GERAR CORTES
+1. Abra ou grave um vídeo. Na escolha de formato, clique em Gerar cortes.
+2. Escolha duração aproximada, quantidade e assunto. Em Trecho e análise,
+   ajuste o intervalo; o padrão é o vídeo inteiro. Clique em Gerar cortes.
+3. O Whisper lê o áudio em blocos; a IA de assuntos compara as falas com os
+   temas. Base é a opção detalhada padrão. Tiny é mais rápido, mas pode
+   deixar passar falas. Ambos estão incluídos, assim como a IA de assuntos.
+4. Revise os cards. Clique no nome para renomear, Editar para abrir no editor,
+   ou × para excluir. Desfazer recupera os cards removidos.
+5. Volte com ← Cortes. Para reaproveitar uma edição, selecione os destinos,
+   clique em Aplicar edição e escolha o card de referência. Marque somente
+   o que quer copiar. O texto das legendas, tempos e cortes internos de cada
+   destino são preservados. Existe desfazer para a última aplicação.
+6. A opção IA: reajustar o rosto confere três momentos da região de câmera
+   copiada. Sem rosto confiável, mantém a área e pede revisão. Não é garantia
+   de seguir pessoas que mudam para fora da região selecionada.
+7. Capa abre as ferramentas existentes com o contexto daquele corte. A
+   montagem com um quadro é local. Gerar com IA online é opcional, exige
+   chave própria, consentimento e pode gerar cobrança na sua conta.
+8. Marque os cards desejados, escolha Exportar selecionados e ajuste saída.
+   Um card usa Salvar como. Vários cards criam uma pasta nova com o nome que
+   você escolher. Cada MP4 recebe o nome do card. Capas criadas são salvas
+   como JPEG ao lado. A fila renderiza um vídeo por vez.
+
+720p horizontal = 1280 × 720; vertical = 720 × 1280.
+1080p horizontal = 1920 × 1080; vertical = 1080 × 1920.
+Formatos personalizados mantêm sua proporção. 60 fps só preserva detalhes
+reais de movimento quando a fonte os possui; não recupera quadros perdidos.
+
+CONTINUIDADE E LIMITES
+- Seus cards e edições são salvos em uma coleção na biblioteca local.
+- A fonte é mantida e não é dividida em vários arquivos durante a análise.
+- Cancelar conserva os blocos concluídos. Retomar exige as mesmas opções;
+  se mudar as opções, use Gerar cortes para uma nova análise.
+- Até 60 sugestões por análise/lote, 120 cards por coleção e 64 itens na
+  fila. A duração sugerida pode ser personalizada entre 5 e 600 segundos.
+- A análise é textual: humor visual, ironia e emoções podem passar
+  despercebidos. Não promete alcance. Revise começo, fim e contexto.
+- A IA de contexto online usa sua chave OpenAI e envia somente o texto,
+  após confirmação. O modo local não precisa de chave nem envia seu vídeo.
+- A biblioteca depende de espaço livre; mantenha uma cópia dos originais.
+- Esta entrega foi testada em uma área de trabalho virtual Linux/Electron.
+  Não foi executada em hardware Windows real. Capture um trecho curto no
+  seu PC para conferir microfone, som do computador, GPU e atalho.
+
+Os detalhes e os resultados medidos estão em Documentacao/VALIDACAO-3.22.md.

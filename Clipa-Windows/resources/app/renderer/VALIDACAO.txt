@@ -1,0 +1,47 @@
+CLIPA 2.3.0 — registro de validação local, 10/10/2026
+
+CORREÇÃO DE TRAVADAS
+Entrada: clipa-original.webm enviado pelo usuário (1538x818, VP8/Opus).
+1.827 quadros até 64,551 s; taxa média de aproximadamente 28,3 fps.
+A fonte já tem 22 lacunas acima de 100 ms, maior lacuna de 650 ms.
+Comparação do mesmo trecho 10–20 s, horizontal 1280x720/60 fps:
+2.2: 600 quadros, 61 mudanças visuais, maior retenção de 1,93 s.
+2.3: 600 quadros, 250 mudanças visuais, maior retenção de 0,15 s.
+Medição por diferença de pixels em miniaturas; imagens quase iguais são
+consideradas repetidas. Não mede interpolação nem garante fluidez de todo player.
+O novo exportador percorre a fonte sequencialmente, preserva os quadros e
+amostra a linha do tempo. Repetições necessárias para 30→60 fps permanecem.
+
+EXPORTAÇÕES REALMENTE EXECUTADAS
+Chromium 143, nativo: WebM real, trecho 10–20 s, 720p60, 600 quadros.
+Chromium 143, composição: 4 s, 720p30, 120 quadros, áudio AAC.
+Chromium 143, CPU: 0,5 s, 1080p60, 30 quadros, H.264 + AAC.
+Firefox 153, CPU: 2 s, 720p30, 60 quadros, H.264 + AAC.
+Firefox 153, CPU: 1 s, 720p60, 60 quadros, H.264 + AAC.
+MP4s CPU decodificados externamente com FFmpeg sem erros. Firefox60:
+AAC-LC estéreo/48 kHz, sinal não silencioso (pico aproximado -21,9 dB).
+A composição executada usa dois recortes, fundo importado e transição com
+1 s fixo + 1 s de movimento. Prévia, coordenadas, modelos JSON válidos e
+inválidos, seleção independente entre modos e largura de 390 px verificados.
+Cancelamento no Firefox termina a tarefa e libera os controles.
+Os testes de página aplicaram a mesma CSP declarada pela extensão.
+
+LIMITES DA VALIDAÇÃO
+Os testes de mídia acima exercitam o editor/exportador servido localmente,
+incluindo workers e runtimes empacotados. A distribuição Firefox foi instalada
+com sucesso como extensão temporária no Firefox 153 por web-ext 10.7.0.
+web-ext lint: zero erros, quatro avisos e um notice. Avisos: dois fallbacks
+Function("return this") de ONNX (não usados em browsers com globalThis, e
+bloqueados pela CSP sem unsafe-eval); import dinâmico do runtime ONNX (caminho
+configurado localmente e sujeito à CSP); chave de consentimento em Firefox
+Android antigo. Este pacote se destina a desktop. O notice marca o script
+Python de empacotamento, que não é executado pelo navegador.
+A instalação Chromium não pôde ser validada neste ambiente: o Chromium
+headless disponível não iniciou o service worker. Não foi contado como teste
+bem-sucedido. A página do editor e exportação Chromium foram testadas.
+Brave, Opera, Windows/macOS, captura de áudio de cada SO e atalho global não
+foram testados nesta rodada. Presets 1440p/2160p/120/240 fps estão expostos,
+mas não foram renderizados nesta matriz; dependem de memória e codificador.
+Firefox usa CPU H.264/AAC e pode exportar lentamente. Sem promessa de 60
+quadros únicos a partir de uma fonte de 30 fps, nem de recuperar travadas
+que já existem no original. Não há interpolação de movimento.

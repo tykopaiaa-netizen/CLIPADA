@@ -1,0 +1,57 @@
+VALIDAÇÃO · CLIPA 3.15
+
+Execução em Electron 44.7.0 / Linux, com desktop virtual e renderização de teste.
+O executável Windows foi empacotado; captura física de tela/áudio no Windows,
+microfones reais, drivers e aceleração de uma GPU Windows NÃO foram validados aqui.
+O comportamento em cada PC depende de codec, memória, driver e permissões.
+
+PASSOU
+- Arquivo original fornecido: WebM VP8 + Opus, 1538×900, 81,255 segundos.
+- Seleção com Shift + botão direito, região vermelha, excluir e desfazer.
+- I / O, manter só intervalo, S e Ctrl+Z com prioridade corrigida.
+- A abertura considera o vídeo inteiro; Manter redefine o intervalo de saída.
+  Duração/estimativa de arquivo descontam os trechos removidos.
+- Arrastar legenda na prévia altera posição; nomes/cores salvos nas faixas.
+- Ampliar mantém timeline; extração com onda visível no vídeo de 81 segundos.
+- Imagem sobreposta e som adicional, persistência e reabertura do projeto.
+- Preservação de enquadramento e estilo por corte ao trocar horizontal/vertical.
+- Importação real de dois MP4 para projetos diferentes; abertura no vertical.
+- Seis exports de 5 segundos: horizontal, vertical livre, vertical 1 câmera,
+  vertical 2 câmeras, composição e Canal Dark. H.264/AAC, 720p, 300 quadros,
+  60 fps. Exportação omitiu corretamente o segundo excluído da fonte.
+- Montagem com salto de 1 s para 80 s da fonte: 2,255 s de saída,
+  136 quadros a 60 fps e AAC. Foram decodificados 127 quadros, evitando
+  a leitura completa do intervalo excluído. Manter 72–80 s e desfazer passaram.
+- Botão Exportar e Salvar MP4: arquivo real 1920×1080, 60 fps, 2 segundos,
+  com AAC. Renderização CPU adicional 426×240, 30 fps, 2 segundos, com AAC.
+- Metadados conferidos por ffprobe. 60 fps de saída não prova 60 quadros únicos:
+  a gravação original tem cadência variável e pode conter pausas/quadros faltantes.
+- Transcrição percorreu os 81,255 s em quatro blocos. Identificação de idioma foi
+  corrigida; três blocos foram identificados como português. O último precisou
+  de revisão; na análise explícita em português retornou uma legenda.
+  O teste não estabelece exatidão de toda a transcrição.
+- Separação local real 25–29 s: dois WAVs 48 kHz (Voz e Instrumental), sem erro
+  de execução. Resultado de modelo não equivale a isolamento perfeito das fontes.
+- Busca de câmeras e acompanhamento: rosto acompanhado em 25/25 amostras do
+  intervalo 25–31 s. Sugestões de câmera podem confundir rostos do conteúdo.
+- Cortes automáticos: três sugestões reais do intervalo 20–60 s, preservadas
+  ao abrir outros painéis e trocar de horizontal para vertical.
+- Larguras 1440, 1024, 760 e 390: sem rolagem horizontal da página, prévia e
+  timeline presentes. Não foi produzido/testado APK ou aplicativo iOS.
+- Captura com dispositivos controlados: MediaRecorder real, duas fontes de som,
+  início, parada, retomada após erro, ausência de áudio do sistema, cancelamento
+  e timeout do microfone. Sinais de 440 Hz e 1320 Hz confirmados na gravação.
+  Isso não substitui o teste físico de áudio do sistema/microfone no Windows.
+- Suítes determinísticas: isolamento/gain/fades/WAV, limites de enquadramento,
+  keyframes, marcas, análise por blocos, rastreamento, contrato nativo e segurança.
+- Narrador/publicação: validação de contrato com respostas controladas, sem
+  enviar conteúdo a contas reais, gerar cobrança ou publicar vídeos.
+
+LIMITAÇÕES
+Não é possível assegurar ausência de todos os bugs ou compatibilidade com todos
+os dispositivos. Tradução, IA de roteiro/narração e geração remota de capas
+não receberam validação de ponta a ponta com serviços pagos nesta entrega.
+Os testes de exportação cobriram H.264/AAC em 240p/720p/1080p; não validaram 4K/8K.
+IA de voz/música não detecta titularidade de direitos. Separação, máscaras,
+transcrição e localização de rostos precisam de revisão humana.
+Não há duração, movimento, filtro ou pausa que garanta evitar copyright.

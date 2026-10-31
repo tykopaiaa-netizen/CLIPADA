@@ -1,0 +1,48 @@
+CLIPA 3.18 — FUNDO DA WEBCAM E ORDEM DAS CAMADAS
+
+PARA REPRODUZIR A COMPOSIÇÃO QUE VOCÊ QUER
+1. Abra ou grave um vídeo e escolha Câmera + fundo ou Vertical.
+2. Marque a pessoa em Câmera no Original. Marque o conteúdo em Vídeo.
+3. Se adicionou o banner como uma camada de imagem, selecione essa imagem
+   e clique em Usar como fundo. Ela preenche a saída e fica atrás das
+   câmeras e do vídeo. Sua duração e seu tamanho continuam editáveis.
+4. Selecione Câmera > Remover fundo. O botão aplica a IA no quadro atual.
+5. Na engrenagem, ajuste a borda, suavidade e limpeza de resíduos.
+   Segure Original para comparar; Restaurar fundo desfaz o filtro.
+6. Confira a prévia e finalize o MP4.
+
+CORREÇÕES
+- O botão Remover fundo antes apenas abria um painel; agora processa de fato
+  as câmeras marcadas, com estado visível, cancelamento e tentativa novamente.
+- A IA captura o quadro certo antes de esperar a fila de processamento.
+  A imagem enviada à análise preserva a proporção do recorte.
+- Máscaras antigas são descartadas ao trocar a fonte ou cancelar.
+- Encaixar e Preencher usam a mesma geometria, com ou sem o filtro.
+- Os pixels coloridos vêm da câmera original; a IA calcula a transparência.
+- A limpeza opcional remove pequenos resíduos isolados. Desative se algum
+  detalhe fino legítimo desaparecer. Os ajustes de borda continuam manuais.
+- A exportação aguarda a máscara de cada quadro. Falha de análise é informada;
+  não é substituída silenciosamente por uma câmera opaca durante a exportação.
+
+ORDEM REAL
+Ao fundo coloca a mídia atrás do vídeo e das câmeras. À frente faz o inverso.
+Ordem no resultado mostra a pilha visual de cima para baixo e permite subir
+ou descer um nível. As próprias áreas de vídeo e câmera também podem trocar
+sua ordem. A imagem de fundo fixa e a cor base ficam abaixo de todas elas.
+Legendas e transições continuam sobre a composição final.
+
+Antes, Para trás só trocava itens importados entre si; uma única imagem
+continuava sobre o original. Isso foi corrigido na prévia e na exportação.
+A ordem é preservada no rascunho e pode ser desfeita com Ctrl+Z.
+Mídias novas continuam entrando à frente, como sobreposição; use Usar como
+fundo quando a finalidade for um banner. A timeline define a duração; Ordem
+no resultado define quais elementos se sobrepõem.
+
+LIMITES DO RECORTE
+É segmentação local de pessoas, não um chroma key perfeito. Cabelo fino,
+objetos próximos ao rosto, pouca luz e movimentos rápidos podem exigir
+ajustes. Detalhado exige mais processamento; Leve é uma alternativa.
+Na prévia, a máscara atualiza conforme a capacidade da máquina; no MP4,
+cada quadro é analisado. O filtro não aumenta a resolução da webcam.
+Este pacote é de Windows; a responsividade em janela estreita não é um
+instalador de celular.

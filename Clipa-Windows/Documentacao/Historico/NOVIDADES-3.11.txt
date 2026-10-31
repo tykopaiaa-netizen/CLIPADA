@@ -1,0 +1,61 @@
+CLIPA 3.11 — EDIÇÃO POR TRECHOS
+
+MARCAR, ENCONTRAR E ANALISAR
+• Bandeiras com nome e tempo, além de intervalos guardados na timeline.
+• M: ponto. Shift+M: intervalo. [ e ]: marca anterior/próxima.
+• Bolinha ✦: contexto da seleção e acesso à ferramenta de IA adequada.
+  Preparar o intervalo não inicia a análise nem gera cobrança.
+• Ctrl+K: busca de ações. Os atalhos não interferem em campos de texto.
+• Painéis avançados recolhidos, controles curtos e dicas ao passar o mouse.
+
+ANIMAÇÃO DE ENQUADRAMENTO
+Enquadrar > Animar enquadramento. No cursor, desenhe a seleção e guarde um ponto.
+Avance, ajuste e guarde outro. Suave, Constante ou Corte direto determinam a
+interpolação. Os mesmos pontos entram na prévia e no MP4. Existem até 120 pontos
+por área; todos ficam salvos no projeto. Ativar pontos manuais desativa Seguir
+rosto naquela área; uma nova análise de rosto desativa os pontos, sem apagá-los.
+Esses pontos animam o RECORTE da fonte. A composição mantém seus controles
+separados de posição/movimento das camadas. Não é um editor geral de curvas.
+
+ÁUDIO
+Áudio > Voz em primeiro plano reduz o original durante os tempos da narração.
+A intensidade vai de 3 a 24 dB; padrão 12 dB, aproximadamente 25% do volume.
+O retorno é gradual. Requer uma narração aplicada e ativa. Se Somente narração
+estiver marcado, o original está em zero: aumente o volume para ouvir o fundo.
+Não é separação de instrumentos nem reconhecimento de direitos autorais.
+
+VOZES
+Interpretações: Natural, Expressiva, Documentário, História, Calma e Tutorial.
+Minha voz · API aceita um ID voice_ de voz criada e autorizada na sua conta
+OpenAI. O Clipa não cria esse clone. Disponibilidade depende da conta do provedor.
+Importar uma narração já gravada continua funcionando sem chave de API.
+Antes de aplicar, o painel mostra cenas com tempo inválido ou vozes faltando.
+
+LEGENDAS
+Revisar texto com IA envia somente as frases habilitadas que cruzam o trecho
+marcado e o contexto informado. Até 120 frases/8.000 caracteres por solicitação.
+É opcional, online e cobrado na sua conta API. As sugestões mostram antes/depois
+para revisão. Aplicar mantém os tempos; remove os tempos de palavra das frases
+alteradas para não destacar palavras com alinhamento incorreto. Se o texto ou
+tempo mudar após a análise, sugestões antigas são bloqueadas. Correções exigem
+revisão: o modelo de texto não escutou o áudio e também pode interpretar errado.
+
+ENTREGA E PUBLICAÇÃO
+• Presets 720p60, 1080p30, 1080p60 e 4K60; ajustes avançados permanecem disponíveis.
+• Dimensões reais, duração após velocidade e tamanho aproximado antes de renderizar.
+• Original fica disponível no horizontal; modelos verticais usam sua proporção.
+• Acabamentos Neutro, Claro, Cinema e P&B como pontos de partida ajustáveis.
+• YouTube: título, descrição, público infantil, visibilidade, tags, categoria,
+  idioma, identificação de conteúdo sintético e capa salva no projeto.
+• TikTok: limites da conta, privacidade, interações, termos e quadro de capa.
+• Instagram: título e descrição reunidos na legenda do Reel.
+• Contadores e lista de requisitos. Textos não são mais cortados silenciosamente.
+• Rascunhos de publicação guardados no projeto. Vincular conta não publica nada.
+• Falha de envio preserva o formulário. Preparações concorrentes são bloqueadas.
+
+GUIA E EXEMPLOS
+Guia com voz sintética em português e gravação real da interface.
+Seis exemplos de 8 segundos exportados pelo Clipa, com H.264 e AAC:
+horizontal, vertical com duas câmeras, vertical com uma câmera, quadro livre,
+câmera/vídeo/fundo em movimento e Canal Dark com narração importada.
+O material ilustrado foi criado para testes. Legendas dos exemplos foram revisadas.

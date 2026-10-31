@@ -1,0 +1,26 @@
+'use strict';
+const CaptionTools={
+  audibleWindows(audio,rate,offset){const windows=[];const step=Math.round(rate*.02);let start=null;for(let i=0;i<audio.length;i+=step){let sum=0;const n=Math.min(step,audio.length-i);for(let j=0;j<n;j++)sum+=audio[i+j]*audio[i+j];if(Math.sqrt(sum/n)>.001){if(start===null)start=i/rate;}else if(start!==null){windows.push({start:offset+Math.max(0,start-.1),end:offset+i/rate+.1});start=null;}}if(start!==null)windows.push({start:offset+Math.max(0,start-.1),end:offset+audio.length/rate});return windows;},
+  filterSilence(cues,windows){return cues.filter(c=>!/^sua legenda aqui[.!]?$/i.test(c.text.trim())&&windows.some(w=>c.start<w.end&&c.end>w.start));},
+  isAlert(text){return /\b(donat(?:e|ion)|super\s?chat|doou|doaç[ãa]o|enviou.{0,24}(reais|r\$)|pix\s+(de|do|da)|mensagem\s+de\s+voz)\b/i.test(text);},
+  fromWhisper(result,offset,limit,filter){
+    const words=result.chunks||[],cues=[];let group=[];
+    const flush=()=>{if(!group.length)return;const start=Math.max(offset,offset+Number(group[0].timestamp?.[0]||0));const last=group[group.length-1];const end=Math.min(limit,offset+Number(last.timestamp?.[1]??((last.timestamp?.[0]||0)+0.7)));const text=group.map(w=>w.text.trim()).join(' ').replace(/\s+([.,!?;:])/g,'$1').trim();const flagged=this.isAlert(text);if(text&&end>start)cues.push({start,end,text,enabled:!(filter&&flagged),flagged,words:group.map(w=>({text:w.text.trim(),start:offset+Number(w.timestamp[0]),end:Math.min(limit,offset+Number(w.timestamp[1]??(w.timestamp[0]+.4)))}))});group=[];};
+    for(const word of words){if(!word.text?.trim()||!Number.isFinite(word.timestamp?.[0]))continue;const previous=group[group.length-1];if(previous&&Number(word.timestamp[0])-Number(previous.timestamp?.[1]??previous.timestamp?.[0])>.45)flush();if(group.length&&(group.length>=6||Number(word.timestamp?.[1]||0)-Number(group[0].timestamp?.[0]||0)>2.8))flush();group.push(word);if(/[.!?]$/.test(word.text.trim()))flush();}flush();return cues;
+  },
+  active(cues,time,exclusions){return cues.find(c=>c.enabled&&c.text?.trim()&&time>=c.start&&time<c.end&&!exclusions.some(e=>c.start<e.end&&c.end>e.start));},
+  draw(ctx,w,h,time,cues,opts,exclusions){
+    const color=(v,f)=>/^#[0-9a-f]{6}$/i.test(v||'')?v:f;const cue=this.active(cues,time,exclusions);if(!cue?.text?.trim()||!opts.enabled)return;
+    const size=Math.max(14,Math.round(Math.min(w,h)*opts.size/100));ctx.save();ctx.font=`900 ${size}px Arial, sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';
+    const maxWidth=w*.84,words=cue.text.split(/\s+/),lines=[];let line='';
+    for(const word of words){const candidate=line?line+' '+word:word;if(ctx.measureText(candidate).width>maxWidth&&line){lines.push(line);line=word;}else line=candidate;}if(line)lines.push(line);
+    const lh=size*1.22,total=lines.length*lh,pad=size*.28;let cx=w*opts.x/100,cy=h*opts.y/100;
+    const textW=Math.min(maxWidth,Math.max(...lines.map(l=>ctx.measureText(l).width)));cx=Math.max(textW/2+pad,Math.min(w-textW/2-pad,cx));cy=Math.max(total/2+pad,Math.min(h-total/2-pad,cy));
+    if(opts.style==='box'||opts.style==='minimal'){ctx.fillStyle=color(opts.boxColor,'#000000');ctx.globalAlpha=opts.style==='minimal'?.45:.78;ctx.fillRect(cx-textW/2-pad,cy-total/2-pad,textW+pad*2,total+pad*2);ctx.globalAlpha=1;}
+    ctx.lineJoin='round';ctx.lineWidth=Math.max(2,size*.13);ctx.strokeStyle=color(opts.outline,'#000000');ctx.fillStyle=color(opts.color,opts.style==='yellow'?'#ffe946':'#ffffff');
+    let wordIndex=0;const activeWord=cue.words?.findIndex(w=>time>=w.start&&time<w.end)??-1;
+    lines.forEach((l,i)=>{const y=cy+(i-(lines.length-1)/2)*lh;if(opts.style!=='karaoke'){ctx.strokeText(l,cx,y,maxWidth);ctx.fillText(l,cx,y,maxWidth);return;}const pieces=l.split(/\s+/);let x=cx-ctx.measureText(l).width/2;ctx.textAlign='left';for(const word of pieces){ctx.fillStyle=wordIndex===activeWord?color(opts.highlight,'#ffd65c'):color(opts.color,'#ffffff');ctx.strokeText(word,x,y);ctx.fillText(word,x,y);x+=ctx.measureText(word+' ').width;wordIndex++;}ctx.textAlign='center';});ctx.restore();
+  },
+  toSrt(cues,start,end,exclusions){const stamp=n=>{const ms=Math.round(n*1000);return `${String(Math.floor(ms/3600000)).padStart(2,'0')}:${String(Math.floor(ms/60000)%60).padStart(2,'0')}:${String(Math.floor(ms/1000)%60).padStart(2,'0')},${String(ms%1000).padStart(3,'0')}`;};return cues.filter(c=>c.enabled&&c.end>start&&c.start<end&&!exclusions.some(e=>c.start<e.end&&c.end>e.start)).map((c,i)=>`${i+1}\n${stamp(Math.max(0,c.start-start))} --> ${stamp(Math.min(end,c.end)-start)}\n${c.text}\n`).join('\n');},
+  parseSrt(text,offset=0){const parse=s=>{const p=s.replace(',','.').split(':').map(Number);return p[0]*3600+p[1]*60+p[2];};const cues=[];for(const b of text.replace(/\r/g,'').trim().split(/\n\s*\n/)){const lines=b.split('\n');const idx=lines.findIndex(l=>l.includes('-->'));if(idx<0)continue;const parts=lines[idx].split('-->');const start=parse(parts[0].trim())+offset,end=parse(parts[1].trim().split(' ')[0])+offset,caption=lines.slice(idx+1).join(' ').replace(/<[^>]*>/g,'').trim();if(Number.isFinite(start)&&Number.isFinite(end)&&end>start&&caption)cues.push({start,end,text:caption,enabled:true,flagged:false});}return cues;}
+};

@@ -1,0 +1,14 @@
+{
+  "name": "clipa-desktop",
+  "productName": "Clipa",
+  "version": "3.22.0",
+  "description": "Gravador e editor local de clipes",
+  "main": "main.cjs",
+  "private": true,
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "44.7.0"
+  }
+}

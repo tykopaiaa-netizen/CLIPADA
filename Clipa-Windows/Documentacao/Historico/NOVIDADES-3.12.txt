@@ -1,0 +1,56 @@
+CLIPA 3.12 — INÍCIO ORGANIZADO E EDIÇÃO MAIS PRECISA
+
+INÍCIO
+• Abrir vídeo e Gravar tela ficam na lateral, com opções avançadas recolhidas.
+• Quatro cartões ilustrados: Horizontal, Vertical, Câmera + fundo e Canal Dark.
+• É possível escolher o modelo antes de abrir ou gravar o material.
+• Biblioteca só aparece quando você clica nela; Agenda tem acesso próprio.
+• Seleção visual de YouTube/Shorts, TikTok e Instagram nos painéis correspondentes.
+• Interface em tons de cinza, prévia fixa e painel de ferramentas com rolagem própria.
+
+TIMELINE
+• Zoom de 1× a 128×, Tudo, Trecho e Ctrl + roda do mouse.
+• Um quadro para frente/trás, repetição do intervalo e encaixe em marcas/bordas.
+• Arraste alças para aparar; use o centro da seleção para deslocar o intervalo.
+• Faixas de cortes e legendas: mova o item ou ajuste suas bordas diretamente.
+• Desfazer faixa recupera até 40 ajustes de tempo desta sessão/fonte.
+• Botão direito: ações do trecho, legenda, áudio e assistente IA.
+• Reordenar e duplicar itens da lista de cortes; miniaturas reais da fonte.
+• As legendas da faixa não ficam mais limitadas à página aberta da lista de revisão.
+• A forma de onda é calculada uma vez e reutilizada na reprodução.
+• A ordem da lista organiza os cortes para revisão/exportação individual; não
+  concatena vários arquivos. Não é uma timeline de montagem de múltiplas fontes.
+
+ENQUADRAMENTO E QUALIDADE
+• X/Y/largura/altura em porcentagem, centralização e proporção livre, 16:9,
+  9:16 ou quadrada calculada em pixels da fonte.
+• Ampliar prévia recolhe as faixas e mantém reprodução e tempos disponíveis.
+• Guia visual opcional de margem para o texto; não entra no vídeo exportado.
+• Avisos quando a saída amplia a fonte, repete quadros ou exige mais memória.
+• Correção de canvases em fontes verticais e recortes estreitos: largura e altura
+  respeitam o limite de processamento, evitando alocações desproporcionais.
+• Prévia limitada por perfil: Mais leve, Equilibrado ou Mais detalhe.
+  Isso não modifica a resolução/FPS escolhidos para o MP4.
+
+MICROFONE E CAPTURA
+• Atualizar microfones e atualização ao conectar/desconectar um dispositivo.
+• Perfis Fiel, Fala e Caixas de som; teste de quatro segundos com liberação
+  automática do dispositivo, medidor e reprodução do teste.
+• Se uma restrição não for aceita, nova tentativa conserva o microfone escolhido.
+• Seleção automática ou entrada específica, até 8 canais quando o dispositivo
+  e seu driver realmente os fornecem. Canal inexistente recebe mensagem clara.
+• Cancelamento, dispositivo ocupado e resposta tardia liberam as fontes abertas.
+• Ganho zero é respeitado. Computador e microfone entram na mixagem do MP4.
+
+PROCESSAMENTO
+• Uma tarefa pesada por vez; tempo decorrido e cancelamento junto da prévia.
+• Estimativa de tempo da etapa quando já existe progresso suficiente.
+• Etapas sem progresso mensurável mostram que ainda não há estimativa.
+• Mais leve limita blocos da IA a 30 segundos; transcrição longa é feita por blocos.
+• Limite preventivo de saída de 8.192 pixels por dimensão e 33 megapixels.
+
+TUTORIAL
+24 capítulos com interface real e narração sintética em português, incluindo
+abertura, áudio, recorte, timeline, legendas, cortes, modelos, composição,
+movimento, narração, thumbnail, MP4, biblioteca e publicação.
+Leia VALIDACAO-DESKTOP.txt para distinguir testes executados e limites pendentes.

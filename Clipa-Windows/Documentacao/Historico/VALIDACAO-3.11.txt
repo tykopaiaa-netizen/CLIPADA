@@ -1,0 +1,86 @@
+VALIDAÇÃO CLIPA 3.11 — 19/10/2026
+
+AMBIENTE
+Electron 44.7.0 em Linux, com tela virtual e Playwright. Pacote Windows x64
+portátil preparado com o runtime Windows. Não houve execução em Windows físico.
+Os testes abaixo não equivalem a garantir zero bugs, desempenho universal ou
+funcionamento de todos os drivers/aplicativos de chamada.
+
+EXPORTAÇÕES REAIS
+• MP4 H.264/AAC em horizontal, vertical e composição.
+• Seis demonstrações de 8 segundos: 480 quadros cada, 60 fps; uma em
+  1080×1920, as demais em 720p conforme orientação. Áudio AAC presente.
+• Intervalos máximos entre timestamps dos quadros <= 16,667 ms nesses arquivos.
+• Narração importada, legendas desenhadas, fades e velocidades 0,25×, 0,5×,
+  2× e 4×. Motores nativo e CPU. Cancelamento por CPU preservou o original.
+• Tons de teste confirmaram preservação de tom ao alterar a velocidade.
+• Exportação com pontos de enquadramento e ducking. No MP4, o tom original
+  de 880 Hz caiu para 24,8% durante a narração, próximo de 12 dB; o tom da
+  narração de 440 Hz permaneceu presente. Fora da narração, o original voltou.
+• Testes de captura misturaram duas fontes controladas. Não substituem
+  capturar microfone físico e loopback de uma chamada real no Windows.
+
+CAPTURA E RECUPERAÇÃO
+• MediaRecorder real com tela e dois sinais de áudio controlados.
+• Seleção de tela antes da abertura do microfone; medidores de ambas as fontes.
+• Cancelamento durante abertura; faixas tardias encerradas.
+• Falha de microfone, falta de som do computador, nova tentativa e timeout.
+• Importação inválida preservou o vídeo e as alterações abertas.
+
+EDITOR
+• Quatro cartões de modelo e três presets verticais.
+• Prévia com busca, pausa e continuação do mesmo ponto; ciclo de composição.
+• Rastreamento de rosto com modelo local real: 9 detecções em 9 amostras.
+• Salvar/reabrir/copiar projeto, identidade nova na cópia e validade do render.
+• Migração de projeto 3.10 conserva fonte, legendas, voz e MP4 anterior; solicita
+  nova renderização quando as regras de composição do projeto mudam.
+• Transferência para outro modelo ajusta os tempos pela velocidade aplicada.
+• Marcas/intervalos, nomes e restauração; marcas não invalidam o MP4.
+• Pontos de recorte com curvas suave, linear e corte direto; limites de geometria.
+• 10.000 combinações de recorte verificadas dentro dos limites da imagem.
+• Teclas M, Shift+M, Ctrl+K e Escape acionadas na interface.
+• Escopo da bolinha IA copiado para a análise sem iniciar tarefa automaticamente.
+• Pontos manuais desativam o rastreamento na área; fundo não recebe recorte
+  da fonte; resolução Original não fica selecionada ao mudar para vertical.
+• Layout sem transbordamento horizontal e prévia visível em 1440, 1024, 760 e 390 px.
+  É validação responsiva de interface; não é um aplicativo móvel nativo entregue.
+
+IA
+• Whisper Base executado de verdade, offline, em fala inglesa e portuguesa.
+• Silêncio não gerou legenda de exemplo. Sugestões de corte usaram a transcrição.
+• A transcrição em português apresentou erros: as legendas das demonstrações
+  foram revisadas manualmente. A IA não tem precisão garantida.
+• Planejamento de análise longa: 2 horas divididas em 120 blocos, sem carregar
+  todo o áudio de uma vez. Não foi executada uma inferência completa de 2 horas.
+• Roteiro e voz online: testes de autorização, falta de chave, esquema, limites,
+  erro de rede, resposta vazia, cancelamento e repetição usando respostas controladas.
+• Vozes prontas não são regeneradas sem necessidade; texto alterado exige nova voz.
+• Templates de interpretação e ID de voz personalizada: payload validado,
+  sem geração paga real nem clonagem de voz nesta entrega.
+• Revisão de legendas: texto limitado, IDs validados, proposta antes de aplicar,
+  tempos preservados, frases fora da seleção preservadas, sugestões antigas
+  impedidas de sobrescrever mudanças posteriores. API simulada.
+
+PUBLICAÇÃO E SEGURANÇA
+• YouTube, TikTok e Instagram: fluxos de upload e estados com respostas controladas.
+• YouTube: título, descrição em bytes UTF-8, tags, idioma, categoria, público,
+  visibilidade, identificação sintética e thumbnail.
+• TikTok: limites/privacidade da conta, ausência de privacidade predefinida,
+  consentimento, opções bloqueadas pela conta e tempo do quadro de capa.
+• Instagram: limite compartilhado da legenda e validação de mídia.
+• Falha de envio conserva formulário; títulos/descrições não são truncados.
+• Duplicatas, envios interrompidos, agenda atrasada e persistência testados.
+• URLs com destinos indevidos rejeitadas; OAuth/PKCE e retorno local verificados.
+• Cofre não salva credenciais se a proteção do sistema estiver indisponível.
+• Renderer com sandbox/context isolation; IPC restrito ao frame confiável.
+• Nenhuma publicação real, autorização de conta real ou chamada paga foi feita.
+
+LIMITES NÃO VERIFICADOS
+Gravação física no Windows; desempenho e qualidade de GPU/driver de cada PC;
+importação real de 30 GB; várias horas de exportação; 4K/120/240 fps em máquinas
+diversas; autenticação/aprovação e publicação públicas nas contas do usuário;
+serviços pagos de imagem, voz e roteiro com uma chave real; dispositivos móveis.
+
+O guia usa captura real da interface e voz sintética gerada localmente.
+A geração dessa voz foi executada com telemetria desativada e rede negada ao
+processo. O gerador do tutorial não foi incorporado ao aplicativo Windows.

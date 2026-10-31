@@ -1,0 +1,12 @@
+.app318 .sceneStack318{border:1px solid #3d424c;border-radius:8px;padding:10px;margin:0 0 14px;background:#20232a}
+.app318 .sceneStack318 summary{font-size:11px;font-weight:600;cursor:pointer}.app318 .sceneStack318>p{font-size:10px;line-height:1.5;color:#a8afbc;margin:9px 0}
+.app318 .stackRows318{display:flex;flex-direction:column;gap:4px;max-height:185px;overflow:auto;margin:8px 0}
+.app318 .stackRow318{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px!important;min-height:32px!important;text-align:left;border:1px solid #404754!important;background:#2c313a!important}
+.app318 .stackRow318 span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;min-width:0}.app318 .stackRow318 small{font-size:9px;color:#b3bdca;flex:none}.app318 .stackRow318[aria-pressed=true]{border-color:#e0e5ee!important;background:#414a59!important}
+.app318 .stackBase318{font-size:10px;padding:7px;color:#a8afbb;border-top:1px solid #393f49}.app318 .stackActions318{display:grid;grid-template-columns:1fr 30px 30px 1fr;gap:4px}.app318 .stackActions318 button{font-size:10px;min-height:29px;padding:3px}
+.app318 .layerPosition318{font-size:11px;padding:8px 10px;border-left:2px solid #bcc8da;background:#252a33;line-height:1.4;color:#dae0ea}
+.app318 .maskActions318{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}.app318 .maskActions318 button{font-size:10px;min-height:32px;padding:6px}.app318 #cancelBg318{border-color:#ae6e78;color:#f5c8d0}.app318 #cancelBg318[hidden]{display:none!important}
+.app318 .cameraAI{border:1px solid #424957;border-radius:8px;padding:11px!important;margin:0 0 16px;background:#21252c}.app318 .cameraAI summary{font-size:12px;font-weight:600}.app318 #cameraAIStatus{font-size:11px!important;line-height:1.5!important;color:#d4dce8;padding:9px;background:#191d24;border-radius:6px}.app318 #cameraResult315{font-size:11px;line-height:1.5;color:#d0d9e8}
+.app318 #assetBackground318{width:100%;margin-top:10px}.app318 .maskActions318 [disabled],.app318 .stackActions318 [disabled]{opacity:.4}
+.app318 .quickBg318{display:grid;grid-template-columns:1fr 34px;gap:6px}.app318 .quickBg318[hidden]{display:none!important}.app318 #quickBg318{border-color:#8b95a5}.app318 #bgOptions318{font-size:15px;padding:4px}
+.app318 #quickBgStatus318{grid-column:1/-1;font-size:10px;line-height:1.45;margin:0}.app318 #quickBgStatus318:empty{display:none}

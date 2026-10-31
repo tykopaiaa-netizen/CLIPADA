@@ -1,0 +1,23 @@
+LIMITES ATUAIS E PRÓXIMAS EVOLUÇÕES — NÃO CONFUNDIR COM FUNÇÕES PRONTAS
+
+1. Timeline com várias fontes, montagem contínua, ripple edit e encaixe de clipes.
+   Hoje S divide a seleção em dois itens da lista de cortes, não move eventos
+   de vários arquivos numa timeline como VEGAS ou CapCut.
+2. Proxies e renderização nativa direta em disco para vídeos enormes e saídas
+   acima do limite em memória. Ainda não implementados.
+3. Alinhamento forçado por palavra para a narração gerada. Hoje os tempos do
+   roteiro são estimados por frase; correções de texto removem palavras desatualizadas.
+4. Keyframes gerais de opacidade, áudio e propriedades de todas as camadas.
+   3.12 implementa pontos de enquadramento por área, além do movimento da composição.
+5. Autosave com versões e projeto portátil reunindo todas as mídias.
+   Hoje a biblioteca é local e o salvamento é manual.
+6. OAuth hospedado e agendamento com o PC desligado.
+   Hoje é necessário configurar as integrações e manter o aplicativo aberto.
+7. Separação de voz/música por modelos especializados, redução neural de ruído,
+   interpolação de quadros e super-resolução neural. Ainda não implementadas.
+8. Criação de clone da própria voz dentro do Clipa. 3.12 aceita voz importada
+   ou ID de voz já aprovada na conta API; não cria esse ID automaticamente.
+
+Ducking durante narração e animação de recortes já foram implementados na 3.12.
+Nenhuma ferramenta promete recuperar detalhes ausentes, prever alcance ou
+identificar automaticamente os direitos de todas as músicas e imagens.

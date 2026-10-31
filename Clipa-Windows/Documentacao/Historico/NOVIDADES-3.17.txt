@@ -1,0 +1,40 @@
+CLIPA 3.17 — ENQUADRAMENTO E PRÉVIA
+
+Enquadrar agora começa pelos ajustes da área selecionada:
+1. Escolha Câmera ou Vídeo em Área no resultado.
+2. Marcar no original abre a comparação. Desenhe o recorte da fonte.
+3. Encaixar mostra toda a seleção sem deformar. Preencher recorta o excesso.
+4. No vertical, ajuste Altura da câmera ou arraste a alça ↕ na divisão.
+   Com duas câmeras, as alturas são independentes e sobra no mínimo 10%
+   da altura para o conteúdo central. Uma câmera pode ocupar até 82%.
+5. Ajustar à proporção da seleção calcula o tamanho usando os pixels da
+   área marcada. Se a câmera for muito estreita, o limite de altura pode
+   deixar espaço livre; escolha Preencher se preferir recortar as bordas.
+6. No horizontal e câmera + fundo, as quatro alças mudam o tamanho da
+   área de saída. Manter proporção vem ativado; ✥ move a área. Os campos
+   de largura/altura, Centralizar e Restaurar área dão ajustes precisos.
+
+PRÉVIA NÃO É RESOLUÇÃO
+Os botões − / Ajustar / + no alto mudam só a visualização, de 50% a 200%.
+Ctrl + roda do mouse também amplia a visualização. Com zoom maior que 100%,
+arraste com o botão do meio para navegar. Ajustar volta ao enquadramento
+completo. Resolução e FPS continuam definidos em Finalizar.
+A roda sem Ctrl mantém o zoom do recorte, que altera o conteúdo exportado.
+Ampliar redistribui o espaço entre prévia e timeline.
+As alças, divisórias de edição e etiquetas NÃO entram no MP4.
+
+CORREÇÕES
+- Vídeo principal é desenhado na área de destino mantendo a proporção;
+  alterar largura e altura da caixa deixou de esticar seus pixels.
+- A caixa do canvas preserva a proporção nos modelos horizontal e vertical.
+- Novos tamanhos/encaixes acompanham rascunhos, cortes individuais e desfazer.
+- Imagens e vídeos sobrepostos têm trava de proporção ao arrastar a alça.
+- Etiquetas duplicadas foram removidas do Resultado.
+- Avisos não reduzem mais a altura da prévia. Controles se adaptam a
+  janelas baixas e estreitas, mantendo a timeline visível.
+
+Encaixar pode deixar espaço quando as proporções diferem. O fundo pode ser
+preenchido com uma imagem em Mídia > Fundo. Preencher evita esse espaço
+recortando a seleção. Nenhuma opção inventa pixels ou recupera detalhes.
+Projetos anteriores conservam o encaixe que usavam; os novos controles
+ficam disponíveis para você ajustá-los.

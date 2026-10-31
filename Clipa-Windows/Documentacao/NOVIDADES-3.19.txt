@@ -1,0 +1,81 @@
+CLIPA 3.19 — CÂMERA, FLUIDEZ E REPETIÇÃO DE MÍDIAS
+
+REMOVER FUNDO EM QUALQUER MODELO
+1. Abra seu projeto e escolha Enquadrar > Remover fundo.
+2. No Original, arraste um retângulo em volta da webcam. Você pode mover a
+   seleção e arrastar os quatro cantos. Precisão e posição oferece pixels.
+3. Clique Aplicar IA. Confira o resultado à direita.
+4. Ajuste Reduzir cadeira, Borda e Suavidade. Borracha remove resíduos;
+   Restaurar detalhe recupera partes que a IA apagou. Desfazer retoque volta
+   um traço. Segure Original para comparar.
+5. Use Ver movimento. Se estiver bom, Concluir. Cancelar restaura o estado
+   anterior à abertura desta janela.
+
+Funciona no horizontal, vertical livre, vertical com uma ou duas câmeras,
+composição com banner e nas orientações do Canal Dark. No modelo com duas
+câmeras, escolha a câmera no campo Área. Os ajustes ficam separados por
+modelo e são salvos com o projeto.
+
+O modo Detalhado combina duas análises locais para reduzir objetos ao redor
+da pessoa. A imagem mantém seus pixels; a máscara muda a transparência.
+Isso não garante recorte perfeito: cadeira, cabelo, mãos, óculos e objetos
+próximos podem exigir retoque. O modo Leve gasta menos processamento.
+Os pincéis ficam em coordenadas fixas da área escolhida ao longo do vídeo.
+Confira os movimentos para não apagar uma mão quando ela entrar nessa área.
+
+O xadrez só indica transparência. No MP4 aparece o fundo ou a camada abaixo.
+Quando a webcam já faz parte da gravação, os pixels do jogo que estavam
+escondidos atrás dela não existem na fonte. O recorte não os reconstrói.
+Adicione uma imagem pelo + > Fundo ou posicione uma mídia abaixo da câmera.
+A prévia da IA usa amostras; a exportação processa cada quadro.
+
+GRAVAR COM MENOS CHANCE DE PERDER QUADROS
+Configurações da gravação agora oferece:
+- PC leve: 720p30; Equilibrado: 1080p30; Jogos: 1080p60.
+- Detalhes: 1440p60; Máxima resolução: 4K60; Personalizado.
+- Formato Automático: H.264 quando disponível; Compatibilidade: VP8;
+  VP9: alternativa que pode exigir mais processamento.
+
+Comece em Jogos / 1080p60. Se perder movimento enquanto joga, teste 720p30
+ou 1080p30 e o formato VP8. Disco é indicado para sessões longas.
+O app mostra a resolução efetivamente recebida e uma amostra do ritmo de
+quadros da captura. Uma tela parada pode legitimamente gerar poucos quadros.
+O medidor não prova o FPS final do arquivo. Grave alguns segundos de movimento
+e confira antes de uma sessão longa.
+
+O app mantém os temporizadores ativos em segundo plano e solicita ao sistema
+que não suspenda a tarefa durante captura/renderização. Isso não aumenta a
+capacidade do hardware nem garante funcionamento com qualquer driver.
+
+EXPORTAÇÃO
+A fonte principal agora é lida sequencialmente pelo FFmpeg nativo. Cada
+quadro passa pelos ajustes antes de ser entregue ao codificador; o processo
+aguarda o codificador quando necessário, em vez de acelerar descartando quadros.
+O progresso distingue o FPS do arquivo da velocidade de processamento e
+mostra uma estimativa do tempo restante. Processar a 10 quadros/s pode produzir
+um MP4 correto a 60 fps: apenas leva mais tempo.
+
+MP4 H.264 + AAC. Mantidos 144p a 4K, qualidade ajustável e GPU quando disponível,
+com CPU como alternativa. Não é possível recuperar movimento ausente na fonte
+somente selecionando 60 fps, nem recuperar detalhes escolhendo 4K.
+A exportação usa disco temporário e leitura em blocos. Deixe espaço livre no
+disco do perfil do app e no destino. Fontes acima de 10 megapixels por quadro
+precisam ser reduzidas para esta versão.
+
+COPIAR MÚSICA SEM ABRIR OUTRA FAIXA
+1. Importe a música pelo + da timeline e selecione o bloco.
+2. Copiar / Ctrl+C copia o bloco. Uma seleção parcial copia apenas esse trecho.
+3. Posicione o cursor em um espaço livre e use Colar / Ctrl+V.
+4. Repetir após / Ctrl+D repete depois do último bloco da mesma faixa.
+5. Até o fim repete até a duração do vídeo principal, cortando a última cópia
+   quando necessário. São permitidos até 128 blocos adicionais por projeto.
+
+As cópias mantêm volume, offset, fades e ajustes, com edição independente.
+Funciona também com imagens e vídeos importados. Clique em um bloco para
+ajustá-lo, arraste para mover e use suas bordas para aparar. S divide no cursor,
+Delete exclui a seleção e Ctrl+Z desfaz. Colar recusa sobreposição na mesma
+faixa; para sobrepor intencionalmente, use uma mídia em outra faixa.
+As camadas continuam limitadas à duração do vídeo principal.
+
+Esta revisão não reproduz todas as funções de CapCut, Filmora ou OBS.
+Os testes e seus limites estão em VALIDACAO-3.19.txt.

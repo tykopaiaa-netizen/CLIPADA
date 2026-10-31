@@ -1,0 +1,59 @@
+CLIPA 3.16 — EVIDÊNCIAS E LIMITES DOS TESTES
+
+Motor nativo
+- H.264/AAC reais, leitura por intervalos de bytes, validação de dimensões,
+  ordem dos blocos, ações desconhecidas e identificadores inválidos.
+- Cancelamento, repetição após cancelamento e escrita de gravação em blocos.
+- Destino final só substituído depois de concluir o arquivo temporário.
+- FFmpeg Windows 9.0.2, distribuição oficial Gyan, ZIP conferido por SHA-256:
+  60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba
+
+Interface e arquivos gerados
+- Seleção real com Shift + botão direito de 2 a 4 s; excluir e desfazer.
+- Clique na posição correta do vídeo; S divide no cursor.
+- Vídeo sobreposto: divisão/exclusão preservam offset da fonte; undo restaura.
+- Menu de contexto; extrair áudio; camadas aparecem conforme são carregadas.
+- Imagem, GIF convertido, vídeo com áudio, fundo, rotação e escala juntos.
+- Arraste e redimensionamento do principal; arraste da legenda.
+- Salvar pelo botão, recarregar o aplicativo e reabrir projeto com mídias,
+  fundo, transformações e posição da legenda preservados.
+- 720p60: 2,5 s, 150 quadros, H.264/AAC após exclusão na montagem.
+- 1080p60: 1 s, 60 quadros, H.264/AAC.
+- 4K30: 0,5 s, 15 quadros, H.264/AAC.
+- 4K60: 0,2 s, 12 quadros, H.264/AAC com vídeo sobreposto.
+- Vertical livre, uma câmera, duas câmeras, composição e Canal Dark:
+  saída MP4 com áudio e dimensões coerentes. Testes curtos de renderização.
+- Exportação longa: 612 s em 256×144, 24 fps, 14.688 quadros, áudio AAC,
+  duração final 612,000 s. O perfil 720p60 máximo também passou pela
+  verificação de requisitos, sem o bloqueio antigo de tamanho/duração.
+- Cancelar a escolha de destino, cancelar processamento e exportar de novo.
+  Um bloqueio real no encerramento do encoder foi encontrado e corrigido.
+- Larguras 1280, 1024, 760 e 390 sem overflow da página; timeline permanece.
+  Em tela estreita, Original e Resultado têm alternância própria.
+
+Gravação e IA
+- MediaRecorder real com tela e duas fontes de áudio sintéticas independentes.
+  As frequências de 440 e 1320 Hz estão presentes juntas no WebM gravado.
+- Caminhos Disco e RAM; stop abre escolha de modelo; microfone ocupado,
+  inventário lento, som do sistema ausente, cancelamento e timeout de 15 s.
+- No WebM original fornecido: Whisper Base local, 25–32 s, quatro legendas;
+  separação local, 25–29 s, arquivos de voz e instrumental de 1.536.044 bytes
+  cada. Esses testes verificam execução e tempos, não transcrição perfeita.
+
+- No original: sugestão de uma câmera; rastreamento com rosto encontrado em
+  25/25 quadros amostrados; três sugestões de corte, preservadas ao trocar
+  entre horizontal e vertical.
+- Original WebM em meia velocidade com fade: 2 s de MP4, 120 quadros a 60 fps.
+- Diagnóstico nativo e nova tentativa CPU/720p30 pelo botão correspondente.
+
+O que não foi comprovado
+- Windows físico, drivers NVIDIA/Intel/AMD, todos os modelos de microfone,
+  gravação de horas com aparelhos reais ou importação real de 30 GB.
+- 4K por dez minutos: o teste longo usou resolução baixa; 4K teve testes curtos.
+- Todos os fluxos de OAuth/publicação e serviços de IA externos.
+- Detecção de copyright, recuperação de quadros ausentes ou qualidade
+  idêntica ao original depois de comprimir.
+
+Ambiente: Electron 44.7.0 / Linux, tela virtual, FFmpeg Linux para os MP4 de
+teste; runtime e FFmpeg Windows empacotados separadamente. Verificações de
+sintaxe e testes estão junto do código. O guia mostra a interface real.

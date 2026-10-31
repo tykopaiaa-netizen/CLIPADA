@@ -1,0 +1,27 @@
+CLIPA 3.14 — VALIDAÇÃO EM 21/10/2026
+Ambiente: Electron 44.7.0 em Linux, tela X virtual autenticada, aceleração gráfica em software nos testes. Pacote Windows x64 preserva o runtime original, com renderer e versão do app atualizados.
+
+PASSOU
+- Entrada -> importação -> modelo -> menu de ferramentas. Voltar retorna ao início.
+- Arquivo vazio rejeitado sem trocar o material; imagem inválida rejeitada.
+- Sem faixas fantasma: áudio só aparece quando extraído/adicionado.
+- Fundo em proporções diferentes; dimensões e margem; preview/exportação consistentes.
+- Modelo local BlazeFace: um rosto encontrado no teste positivo; caso sem rosto mantém a imagem inteira.
+- Arraste real de imagem no Resultado; deslocamentos X/Y persistidos.
+- Bolinha de volume do som: arraste de 25 px produziu -7,5 dB; duplo clique restaurou 0 dB.
+- Mistura estéreo: som adicional somente entre 2 e 4 s. RMS do original ~0,0624, mistura ~0,0697, após o trecho ~0,0623. Vizinhos preservados.
+- MP4 H.264 + AAC: horizontal 640x360/30, exportação/download pela UI 1280x720/30, vertical 360x640/30 por CPU e composição 640x360/30.
+- Salvamento e reabertura de fundo, imagem sobreposta e som com ganho, tempo e margem.
+- Finalizado guardado com arquivo nativo e botão Publicar na biblioteca. Mudança após renderização invalidou o status de renderização atual.
+- Sem erros JavaScript nos fluxos de mídia exercitados; sem IDs duplicados no smoke test.
+- Larguras 1440, 1024, 760 e 390: prévia permanece na tela, sem overflow horizontal do documento.
+- Regressão de áudio 3.13: divisão, isolamento, limites temporais, -12 dB, fades, silêncio, normalização e WAV.
+- Contrato nativo: sandbox/contexto, origem confiável, câmera negada, microfone delimitado, seleção de tela, consentimento de uso único, cancelamento e bloqueio por tarefa.
+
+NÃO VERIFICADO NESTE AMBIENTE
+- Execução física no Windows, microfones individuais, loopback de cada dispositivo e atalhos do Windows.
+- Exportação 4K/8K nas GPUs dos usuários; a matriz de suporte depende do hardware.
+- Upload real em YouTube/TikTok/Instagram; não foram usados tokens pessoais ou enviados vídeos.
+- Teste exaustivo de todas as IAs e de todas as combinações históricas. Nenhum aplicativo pode prometer ausência total de bugs.
+
+O guia mostra ações na interface real com material sintético. A narração é sintetizada em português, voz Piper faber-medium (dataset CC0), e não representa a voz do usuário.

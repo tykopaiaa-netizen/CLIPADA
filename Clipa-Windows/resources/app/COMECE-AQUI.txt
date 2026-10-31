@@ -1,0 +1,40 @@
+CLIPA STUDIO 3.21 — WINDOWS PORTÁTIL
+
+1. Extraia TODO o ZIP. Abra Clipa-Windows/Clipa.exe.
+2. Mantenha os demais arquivos ao lado do executável. Não abra dentro do ZIP.
+3. Não precisa de Brave, Node.js ou instalação de extensão.
+4. Use a pasta nova para esta versão; mantenha a anterior como cópia de segurança.
+
+A estrutura foi preservada: Horizontal, Vertical, Câmera + fundo e Canal Dark.
+A novidade principal fica em Modelos, DENTRO do editor: 15 composições,
+transformação direta, inversão câmera/conteúdo e modelos pessoais.
+
+Marque as áreas no Original; ajuste posição e tamanho no Resultado.
+Encaixar mostra a área inteira. Preencher recorta o excesso.
+Em composições de duas áreas, arraste a pequena alça da divisão.
+Adicione seu fundo pelo botão Fundo ou + Adicionar na timeline.
+
+ATALHOS
+Espaço: reproduzir/pausar. S: dividir. Shift + arrastar: selecionar trecho.
+Delete: excluir seleção. I / O: marcar dois pontos.
+Ctrl+Shift+X: manter o trecho selecionado do vídeo principal.
+Ctrl+Z: desfazer. Ctrl+Shift+Z: refazer.
+Ctrl+C / Ctrl+V: copiar/colar mídia importada. Ctrl+D: repetir após.
+Ctrl+Shift+9: atalho global de gravação, quando disponível.
+
+Para trocar um bloco importado de faixa, selecione-o e abra Faixa do bloco.
+Nome e cor: clique no nome da faixa. O volume por bloco continua na bolinha.
+
+FINALIZAR
+Confira os pixels, FPS e intervalo. As mensagens dizem qual área falta
+marcar ou qual tarefa ainda está em andamento. Use primeiro um trecho curto.
+O app usa renderização por quadros; aumentar o FPS não recupera movimento
+que já faltava na fonte. Escolha CPU se houver problema no codificador da GPU.
+
+Veja Documentacao/VALIDACAO-3.21.md para mudanças, evidências e limites.
+Os quatro MP4 em Exemplos/3.21 foram exportados pelo próprio Clipa.
+O guia narrado mostra as telas desta versão e usa voz sintética padrão.
+
+Os testes desta entrega ocorreram em área de trabalho virtual Linux.
+A captura e os dispositivos em um PC Windows físico ainda precisam ser
+confirmados. Não foi prometida compatibilidade perfeita com todo hardware.

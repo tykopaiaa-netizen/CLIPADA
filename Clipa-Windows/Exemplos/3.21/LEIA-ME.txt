@@ -1,0 +1,4 @@
+Quatro exemplos exportados pelo Clipa 3.21, usando o vídeo fornecido nesta conversa.
+720p, 30 fps, H.264 + AAC. A fonte tem menos quadros por segundo que a saída.
+O Canal Dark utiliza roteiro revisado manualmente e voz sintética padrão importada.
+O guia narrado é entregue separadamente. Nenhum modelo de voz foi adicionado ao app.

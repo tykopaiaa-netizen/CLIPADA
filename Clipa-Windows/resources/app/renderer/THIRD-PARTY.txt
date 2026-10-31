@@ -1,0 +1,71 @@
+Bundled software (licenses in licenses/ and vendor/*.LEGAL.txt):
+- Hugging Face Transformers.js 3.8.1 — Apache-2.0
+- ONNX Runtime Web 1.22.0-dev.20250409-89f8206ba4 — MIT
+- Google MediaPipe Tasks Vision 0.10.32 — Apache-2.0
+- Mediabunny 1.61.1 — MPL-2.0
+Mediabunny source is available at https://github.com/Vanilagy/mediabunny
+Worker URL creation is adapted by the build plugin as documented below. Minified bundles include source-license notices.
+
+Downloaded on demand (not included in this ZIP):
+- Xenova/whisper-tiny, whisper-base, whisper-small (Whisper multilingual ONNX).
+  Model cards: https://huggingface.co/Xenova/whisper-tiny
+  https://huggingface.co/Xenova/whisper-base
+  https://huggingface.co/Xenova/whisper-small
+- Google MediaPipe BlazeFace short-range face detector model.
+  https://ai.google.dev/edge/mediapipe/solutions/vision/face_detector
+
+Technical references:
+https://huggingface.co/docs/transformers.js/v3.8.1/en/api/pipelines
+https://mediabunny.dev/guide/writing-media-files
+https://mediabunny.dev/guide/media-sources
+https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getDisplayMedia
+
+2.1.1 modification: Mediabunny worker functions extracted into local
+vendor/media-*.js; worker URL creation adapted by scripts/build.cjs for
+Manifest V3. Worker function bodies are preserved under MPL-2.0.
+
+@mediabunny/aac-encoder 1.61.1 — MPL-2.0 wrapper; FFmpeg AAC WASM
+https://github.com/Vanilagy/mediabunny/tree/main/packages/aac-encoder
+https://github.com/FFmpeg/FFmpeg — FFmpeg (LGPL-2.1-or-later)
+The package worker is extracted unchanged to vendor/aac-worker.js; its Blob
+factory is replaced during build. See licenses/AAC-ENCODER.txt,
+licenses/AAC-ENCODER-BUILD.md and licenses/FFMPEG-LGPL-2.1.txt.
+
+2.3.0: @ffmpeg/core 0.12.10 — GPL-2.0-or-later (single-thread core with libx264).
+Included binary: vendor/ffmpeg/ffmpeg-core.js + ffmpeg-core.wasm, unmodified
+from the npm package. GPL license: licenses/FFMPEG-GPL-2.0.txt.
+Upstream source/build scripts and dependency versions:
+https://github.com/ffmpegwasm/ffmpeg.wasm/tree/main/packages/core
+https://github.com/ffmpegwasm/ffmpeg.wasm/tree/main/build
+https://github.com/ffmpegwasm/ffmpeg.wasm/releases
+https://github.com/FFmpeg/FFmpeg
+https://code.videolan.org/videolan/x264
+The Clipa worker, adapters and application source are included in this package.
+The FFmpeg core retains its own GPL license; it is not proprietary Clipa code.
+
+Optional translation model: Xenova/m2m100_418M (ONNX conversion of facebook/m2m100_418M). Model weights downloaded on demand, not included. Model card: https://huggingface.co/Xenova/m2m100_418M and https://huggingface.co/facebook/m2m100_418M . Inference through existing Transformers.js / ONNX Runtime dependencies.
+
+MediaPipe SelfieSegmenter model (Google), bundled for local human segmentation. Model source: https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/latest/selfie_segmenter.tflite . Guide/model card links: https://developers.google.com/edge/mediapipe/solutions/vision/image_segmenter . Runtime @mediapipe/tasks-vision 0.10.32 and its existing licenses retained.
+
+AST AudioSet: MIT/ast-finetuned-audioset-10-10-0.4593 (BSD-3-Clause), ONNX quantizado Xenova/ast-finetuned-audioset-10-10-0.4593. Pesos opcionais baixados no primeiro uso; não incluídos neste ZIP.
+
+Clipa 3.6 optional semantic model: Xenova/paraphrase-multilingual-MiniLM-L12-v2, ONNX conversion of sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 (Apache-2.0). Model card: https://huggingface.co/Xenova/paraphrase-multilingual-MiniLM-L12-v2 . Weights downloaded on demand, not shipped.
+Clipa 3.6 bundled model: Google MediaPipe selfie_multiclass_256x256, float32 version 1. Source: https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_multiclass_256x256/float32/1/selfie_multiclass_256x256.tflite . Model guide: https://developers.google.com/edge/mediapipe/solutions/vision/image_segmenter .
+
+Whisper Tiny/Base ONNX quantized weights: Xenova/whisper-tiny and Xenova/whisper-base on Hugging Face. Revisions and declared Apache-2.0 license in models/*/PROVENANCE.json. Original OpenAI Whisper: MIT. License texts included in models/.
+
+Clipa 3.9: BlazeFace short-range float16 model version 1 is bundled at models/face/blaze-face.tflite. Provenance and SHA-256 in the adjacent PROVENANCE.json. Existing MediaPipe license notices retained.
+
+Clipa 3.10: o motor FFmpeg já incluído também aplica atempo aos trechos de áudio. O exportador mantém Mediabunny 1.61.1 e @mediabunny/aac-encoder 1.61.1. Licenças e atribuições anteriores preservadas.
+
+Clipa 3.13 source separation
+- Spleeter 2-stem neural models (vocals / accompaniment), Deezer Spleeter.
+  MIT license: licenses/Spleeter-MIT.txt.
+- ONNX conversion distributed by k2-fsa sherpa-onnx source separation releases.
+  https://github.com/k2-fsa/sherpa-onnx/releases/tag/source-separation-models
+  Package: sherpa-onnx-spleeter-2stems.tar.bz2. Apache-2.0 conversion project:
+  licenses/Sherpa-ONNX-Apache-2.0.txt. Models stored in models/spleeter/.
+- ONNX Runtime Web 1.22.0, Microsoft, MIT: licenses/ONNX-Runtime-MIT.txt.
+  Matching ort.wasm.min.mjs, ort-wasm-simd-threaded.mjs and WASM in vendor/separation/.
+- The FFT, overlap reconstruction, clip gain editing and UI integration are app code.
+  The model splits vocal/instrumental content, not rights ownership.

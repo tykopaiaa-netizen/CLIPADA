@@ -1,0 +1,36 @@
+CLIPA 3.10 — CANAL DARK / ROTEIRO E NARRAÇÃO
+
+1. Abra Clipa.exe, importe ou grave um vídeo e escolha o cartão Canal Dark.
+2. Escolha Horizontal ou Vertical. Enquadrar mantém as opções de recorte e os modelos verticais de uma ou duas câmeras. O resultado continua visível enquanto você usa o painel.
+3. Na timeline, escolha a velocidade (0,25× a 4×). Os tempos De/Até, cortes e legendas continuam nos segundos do original. Em Exportar, o painel mostra a duração final: 20 s a 2× produzem 10 s.
+4. Em Narração, informe De e Até ou clique em Usar corte. Marcar corte aplica esse intervalo à exportação. Próximo avança a análise pelo vídeo.
+5. Para usar a IA online, clique em Chave API → OpenAI · roteiro, voz e capas. Salve uma chave da sua conta OpenAI API. A assinatura do ChatGPT não inclui créditos de API. Autorize o envio e a cobrança no painel. Sua chave fica no cofre do sistema, nunca no projeto.
+6. Clique em Analisar vídeo. O app captura imagens a cada 1 ou 2 segundos, em blocos de 20 segundos, e gera cenas com tempos, texto e observações. Até 5 minutos por análise; continue em trechos. A IA vê imagens amostradas: não ouve o áudio, não vê todos os quadros e pode perder ações rápidas. Contexto opcional ajuda com nomes e tema. Revise cada afirmação e as cenas marcadas para revisão.
+7. Edite o texto e os tempos. Ver busca a cena no original. + Cena permite escrever sem IA. Cenas precisam estar em ordem, sem sobreposição, com pelo menos 0,3 s e até 1.400 caracteres cada.
+8. Escolha idioma, voz sintética e interpretação. Gerar vozes processa as cenas novas ou alteradas; vozes concluídas são reutilizadas. Voz gera uma cena; Ouvir reproduz; Importar permite sua própria gravação de até 24 MB / 120 segundos. Alterar texto exige gerar/importar novamente. Não há clonagem de voz.
+9. Aplicar voz monta a faixa VOZ na timeline. Se a fala exceder o espaço, o app acelera o áudio preservando o tom até 2×. Se não couber, pede texto menor ou intervalo maior, sem cortar palavras silenciosamente. Somente narração reduz a faixa original a zero; desmarque antes de aplicar se quiser misturar. Áudio permite restaurar o volume original; Narração controla o volume da voz.
+10. Legendas do roteiro cria frases sincronizadas com o espaço da voz. Só legendas funciona sem gerar voz. Tempos por frase são estimados: revise ouvindo. A transcrição comum de IA continua lendo o áudio original ou a faixa externa, e não a voz de Canal Dark. Use Do roteiro para as legendas da narração.
+11. Legendas → Estilo altera cores, contorno, tamanho e posição. Aplique novamente se mudar o roteiro depois de montar a voz. A faixa aplicada não muda sozinha.
+12. Reproduza, busque qualquer ponto e revise a prévia. Exportar → escolha 720p ou 1080p, FPS e qualidade → Gerar MP4. O vídeo exportado inclui a narração ativa e os ajustes. Salve o MP4 e guarde o projeto para reabrir depois. Criar cópia preserva o projeto anterior.
+
+LIMITES PRÁTICOS
+• Entrada: até 30 GB, usando leitura local. Importar não significa conseguir renderizar tudo de uma vez; depende da memória, codec e duração.
+• Velocidade diferente de 1×, fades e narração: até 10 minutos tanto na fonte quanto na saída por exportação. Em 0,25×, por exemplo, até 150 segundos da fonte para produzir 600 segundos.
+• Roteiro: até 300 cenas salvas. Monte uma parte e use uma cópia para continuar. A análise é manual por trechos; não narra automaticamente uma live inteira em uma chamada.
+• Saída em memória: estimativa limitada a 900 MB no desktop. CPU compatível aceita entrada até 256 MB. Use Nativo/Automático ou divida arquivos maiores.
+• A timeline atual exporta um intervalo contínuo. Guardar cortes não remove automaticamente todos os espaços entre eles; não há montagem de vários arquivos na mesma sequência.
+• Não há garantia de monetização, alcance, ausência de reivindicações ou aprovação no YouTube. Narração, velocidade e recorte são ferramentas de edição. Avalie as regras aplicáveis ao material que vai publicar.
+
+PRIVACIDADE E CUSTO
+Transcrição Base/Tiny, recortes e renderização continuam locais. A análise visual online envia somente os quadros amostrados e o contexto selecionado; voz envia o texto. O app solicita autorização e não repete automaticamente chamadas pagas com erro. Respostas podem ser imprecisas; revise antes de publicar. A voz gerada é sintética; informe isso ao seu público quando usá-la.
+
+DOCUMENTAÇÃO DA INTEGRAÇÃO
+https://developers.openai.com/api/docs/guides/images-vision
+https://developers.openai.com/api/docs/guides/structured-outputs
+https://developers.openai.com/api/docs/guides/text-to-speech
+
+3.11: O painel agora indica o que falta antes de aplicar: tempos inválidos,
+texto ausente ou voz a gerar/importar. + Cena usa a posição atual do cursor;
+posicione-o onde a nova cena deve começar. Ajuste De/Até sem sobrepor cenas.
+Os estilos de voz são opcionais. A versão 3.11 inclui ducking no painel Áudio
+para reduzir o som original durante os tempos da narração.

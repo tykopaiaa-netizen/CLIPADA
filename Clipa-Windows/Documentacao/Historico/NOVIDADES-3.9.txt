@@ -1,0 +1,17 @@
+CLIPA DESKTOP 3.9 — 16/10/2026
+
+• Seguir rosto: análise local da área selecionada, zoom e suavização. O movimento é usado na prévia e no MP4 e fica salvo no projeto. Se perder o rosto, segura a última posição. Até 15 minutos por análise. O detector está incluído; não depende de download no primeiro uso. Precisa de aceleração gráfica disponível.
+• Biblioteca no início: Projetos, Em edição, Finalizados, Publicações e Agenda. Busca por nome. Vídeos finalizados guardados também em arquivos locais do app.
+• Finalização explícita: no resultado da exportação, escolha Em edição ou Finalizado e clique em Guardar. Não libera um MP4 desatualizado como a versão atual.
+• Redes / IA: links de perfis separados da autorização de postagem. YouTube e TikTok têm fluxo OAuth no navegador; Instagram usa token autorizado de app Meta / conta profissional vinculada a uma Página.
+• Publicação: envio de MP4, metadados, visibilidade, estado de processamento e histórico. YouTube permite enviar a capa salva junto do vídeo. As redes exigem configuração de aplicativo, permissões e, conforme o caso, revisão. Nenhuma credencial de conta vem dentro do pacote.
+• Agenda local: define data e horário, evita tarefas duplicadas e registra falhas. Precisa do Clipa aberto, PC acordado e internet. Um atraso acima de 10 minutos exige reagendar. Não funciona como serviço em nuvem com o PC desligado.
+• Thumbnail com IA: contexto do trecho e quadro atual, foto opcional ou instruções personalizadas. JPEG 1536 × 864, qualidade equilibrada/alta. Requer chave OpenAI API com acesso ao modelo de imagem e cobrança própria. O aplicativo pede confirmação antes de enviar as referências. Montagem de capa local permanece disponível sem chave.
+• Legendas: detecta tempos inválidos, vazios ou fora do trecho e recalcula por frase. Silêncio não recebe texto de exemplo. Frases com temporização recalculada podem não ter destaque preciso por palavra; revise os tempos.
+• Botões mais curtos, biblioteca visível ao lado da importação, dicas e controles de rosto junto do zoom.
+• Segurança: credenciais protegidas pelo cofre do sistema, chamadas nativas restritas, validação de URLs/arquivos, timeouts, confirmação de destino e tratamento de envio incerto sem repetir automaticamente.
+
+O QUE AINDA EXIGE CONFIGURAÇÃO OU TESTE
+As integrações precisam das credenciais dos seus aplicativos registrados nas redes. Vincular apenas o link do perfil não concede autorização. Os testes de rede foram controlados, sem publicação em contas reais. A geração online de imagem foi validada no contrato de requisição e no tratamento de erros, sem uma geração paga com credencial do usuário.
+
+O app foi exercitado no Electron em Linux com tela virtual, além de testes do contrato Windows. Não foi executado em um Windows físico; captura, áudio do sistema, drivers, OAuth real e desempenho no seu PC ainda precisam de validação. Não existe garantia de ausência de todos os bugs. Leia VALIDACAO-DESKTOP.txt para os testes realizados.

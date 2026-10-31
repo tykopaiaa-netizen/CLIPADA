@@ -1,0 +1,21 @@
+CLIPA DESKTOP 3.8 — 16/10/2026
+
+• Interface em tons de cinza; painéis de ferramentas organizados e prévia fixa.
+• Seleção em dois modos: Desenhar (R) e Mover / alças (V). Ao terminar de desenhar, as alças passam a ajustar a seleção.
+• Ajuda contextual atualizada, sem sobreposição com balões antigos.
+• Ajuda contextual ao passar o mouse e animação breve nos ícones, respeitando redução de movimento.
+• Guia da área ativa e indicação da próxima área que falta marcar.
+• Três presets verticais com nomes mais claros: duas câmeras, uma câmera e quadro livre.
+• Movimento da composição com tempos de descida, subida e pausa; botão para testar e opção de ajustar o ciclo à duração do corte.
+• Posicionar na saída pausa no começo do intervalo. Arrastar escolhe a camada visível sob o cursor.
+• Legendas com cores de texto, contorno, destaque e caixa. Mesma renderização na prévia e no MP4. Cores preservadas por modelo e no projeto.
+• Legendas e Cortes IA separados em configurar intervalo, iniciar e revisar. Tiny sem palavras reconhecidas tenta Base e usa Base nos próximos blocos dessa análise.
+• Cortes manuais: guardar trecho e dividir no cursor. A divisão cria dois itens revisáveis; não remove frames do arquivo original.
+• Atalhos de edição e janela de ajuda; atalhos não interferem na digitação nem em outros diálogos.
+• Lista de cortes permanece aberta ao revisar um trecho e destaca o item ativo.
+• Prévia de corte para exatamente no limite marcado; o painel de movimento identifica o fim.
+• Atalhos de exportação 720p60 / 1080p60 e dimensões escritas em pixels.
+• Prévia com mais resolução quando a área exibida aumenta; o arquivo final usa a resolução de exportação.
+• Corrigidos: alças interceptando novo desenho, prévia preta fora do intervalo com fade, deslocamento do centro após limite de movimento, substituição de fundo de projeto reaberto, atualização da faixa de legendas durante revisão e controles necessários à exportação após reorganização do painel.
+
+Não é uma promessa de ausência de bugs. Leia VALIDACAO-DESKTOP.txt e faça uma gravação curta no seu Windows antes de uma sessão importante.

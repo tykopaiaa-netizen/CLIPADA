@@ -1,0 +1,1144 @@
+{
+  "ai-board322": {
+    "duration": 64.551,
+    "status": "4 cortes na coleção · 4 novos. Abra os cards para revisar o contexto.",
+    "warning": "",
+    "analysis": {
+      "start": 0,
+      "end": 64.551,
+      "length": 15,
+      "count": 4,
+      "next": 64.551,
+      "partial": false,
+      "record": {
+        "kind": "captions",
+        "label": "Legendas",
+        "start": 0,
+        "end": 64.551,
+        "next": 64.551,
+        "status": "3 blocos analisados · 23 legendas · 0:00 → 1:04. Revise o texto e os tempos.",
+        "blocks": [
+          {
+            "start": 0,
+            "end": 24,
+            "count": 10,
+            "audible": true,
+            "language": "portuguese"
+          },
+          {
+            "start": 24,
+            "end": 48,
+            "count": 8,
+            "audible": true,
+            "language": "portuguese"
+          },
+          {
+            "start": 48,
+            "end": 64.551,
+            "count": 5,
+            "audible": true,
+            "language": "portuguese"
+          }
+        ]
+      },
+      "signals": {
+        "candidate-0": {
+          "scores": {
+            "humor": 0.43234275906447917,
+            "impact": 0.3231878022686142,
+            "insight": 0.15434364815899063,
+            "story": 0.2180883566667769,
+            "tutorial": 0.0964884868703665
+          },
+          "engine": "IA local"
+        },
+        "candidate-1": {
+          "scores": {
+            "humor": 0.4232105052660673,
+            "impact": 0.3241642443928171,
+            "insight": 0.13412968364019268,
+            "story": 0.1567894418188749,
+            "tutorial": 0.06553489652259717
+          },
+          "engine": "IA local"
+        },
+        "candidate-2": {
+          "scores": {
+            "humor": 0.4718771908469851,
+            "impact": 0.4165030566102461,
+            "insight": 0.3538990158095382,
+            "story": 0.3105492906838835,
+            "tutorial": 0.27819993681534455
+          },
+          "engine": "IA local"
+        },
+        "candidate-3": {
+          "scores": {
+            "humor": 0.46858032898443397,
+            "impact": 0.3882280473463834,
+            "insight": 0.30965264189436076,
+            "story": 0.3186571082515186,
+            "tutorial": 0.2869815041643778
+          },
+          "engine": "IA local"
+        },
+        "candidate-4": {
+          "scores": {
+            "humor": 0.41933372464322105,
+            "impact": 0.36039657550437526,
+            "insight": 0.2886455239925282,
+            "story": 0.3063106749902181,
+            "tutorial": 0.28246978176186693
+          },
+          "engine": "IA local"
+        },
+        "candidate-5": {
+          "scores": {
+            "humor": 0.3718538990695909,
+            "impact": 0.29106715871693994,
+            "insight": 0.18811336935816,
+            "story": 0.20441997163089362,
+            "tutorial": 0.2243522916818068
+          },
+          "engine": "IA local"
+        },
+        "candidate-6": {
+          "scores": {
+            "humor": 0.2860840385361737,
+            "impact": 0.4629254346679892,
+            "insight": 0.1559543975618593,
+            "story": 0.31924624937476126,
+            "tutorial": 0.14213072104934302
+          },
+          "engine": "IA local"
+        },
+        "candidate-7": {
+          "scores": {
+            "humor": 0.2785946965254449,
+            "impact": 0.4574178445639938,
+            "insight": 0.16661494694253207,
+            "story": 0.3461571870640467,
+            "tutorial": 0.1810870832157493
+          },
+          "engine": "IA local"
+        },
+        "candidate-8": {
+          "scores": {
+            "humor": 0.3752535085091987,
+            "impact": 0.46295170794688784,
+            "insight": 0.13977949989004945,
+            "story": 0.339876996526177,
+            "tutorial": 0.15582844401051973
+          },
+          "engine": "IA local"
+        },
+        "candidate-9": {
+          "scores": {
+            "humor": 0.5067998871387898,
+            "impact": 0.4722437657342222,
+            "insight": 0.29361338789698654,
+            "story": 0.327456957269211,
+            "tutorial": 0.2665106036652552
+          },
+          "engine": "IA local"
+        }
+      },
+      "settingsKey": "{\"cutLength322\":\"15\",\"cutCustomLength322\":\"30\",\"cutCount322\":\"4\",\"cutFocus322\":\"mix\",\"cutContext322\":\"\",\"cutFrom322\":\"0\",\"cutTo322\":\"64.551\",\"cutLanguage322\":\"portuguese\",\"cutQuality322\":\"Xenova/whisper-base\",\"cutEngine322\":\"local\",\"cutReuse322\":false}",
+      "completed": 1793217477273
+    },
+    "transcript": [
+      {
+        "start": 0,
+        "end": 4,
+        "text": "Não, episódio 214.",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Não, episódio 214.",
+            "start": 0,
+            "end": 4
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 6,
+        "end": 8,
+        "text": "Ah!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Ah!",
+            "start": 6,
+            "end": 8
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 8,
+        "end": 10,
+        "text": "Filha da puta!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Filha da puta!",
+            "start": 8,
+            "end": 10
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 10,
+        "end": 12,
+        "text": "Ah!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Ah!",
+            "start": 10,
+            "end": 12
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 12,
+        "end": 14,
+        "text": "Ah!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Ah!",
+            "start": 12,
+            "end": 14
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 14,
+        "end": 16,
+        "text": "Ah!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Ah!",
+            "start": 14,
+            "end": 16
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 16,
+        "end": 18,
+        "text": "Ah!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Ah!",
+            "start": 16,
+            "end": 18
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 18,
+        "end": 20,
+        "text": "Ah!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Ah!",
+            "start": 18,
+            "end": 20
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 20,
+        "end": 22,
+        "text": "Ah!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Ah!",
+            "start": 20,
+            "end": 22
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 22,
+        "end": 24,
+        "text": "Ah!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Ah!",
+            "start": 22,
+            "end": 24
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 25.56,
+        "end": 26.88,
+        "text": "é hora da verdade, Chat.",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "é",
+            "start": 25.56,
+            "end": 25.78
+          },
+          {
+            "text": "hora",
+            "start": 25.78,
+            "end": 25.94
+          },
+          {
+            "text": "da",
+            "start": 25.94,
+            "end": 26.08
+          },
+          {
+            "text": "verdade,",
+            "start": 26.08,
+            "end": 26.42
+          },
+          {
+            "text": "Chat.",
+            "start": 26.64,
+            "end": 26.88
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 27.48,
+        "end": 29.12,
+        "text": "Corrâvamos, Matimbo.",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Corrâvamos,",
+            "start": 27.48,
+            "end": 28.259999999999998
+          },
+          {
+            "text": "Matimbo.",
+            "start": 28.52,
+            "end": 29.12
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 29.9,
+        "end": 30.46,
+        "text": "Fudeu!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Fudeu!",
+            "start": 29.9,
+            "end": 30.46
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 30.9,
+        "end": 32.16,
+        "text": "Fudeu!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Fudeu!",
+            "start": 30.9,
+            "end": 32.16
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 32.76,
+        "end": 33.78,
+        "text": "Fudeu!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Fudeu!",
+            "start": 32.76,
+            "end": 33.78
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 34.08,
+        "end": 35.7,
+        "text": "Fudeu, caraio!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Fudeu,",
+            "start": 34.08,
+            "end": 35.06
+          },
+          {
+            "text": "caraio!",
+            "start": 35.16,
+            "end": 35.7
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 36.28,
+        "end": 37.32,
+        "text": "Fudeu, porra!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Fudeu,",
+            "start": 36.28,
+            "end": 36.78
+          },
+          {
+            "text": "porra!",
+            "start": 36.9,
+            "end": 37.32
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 42.4,
+        "end": 48,
+        "text": "Quando",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Quando",
+            "start": 42.4,
+            "end": 49.7
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 48,
+        "end": 53,
+        "text": "Quando mais episódios já começam a frenético assim, né? Normal?",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Quando mais episódios já começam a frenético assim, né? Normal?",
+            "start": 46,
+            "end": 53
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 53,
+        "end": 56,
+        "text": "O bagulho já começa como?",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "O bagulho já começa como?",
+            "start": 53,
+            "end": 56
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 56,
+        "end": 59,
+        "text": "Espâncano, uma de envolvianos.",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Espâncano, uma de envolvianos.",
+            "start": 56,
+            "end": 59
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 59,
+        "end": 61,
+        "text": "Que porra é essa chat?",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Que porra é essa chat?",
+            "start": 59,
+            "end": 61
+          }
+        ],
+        "review": false
+      },
+      {
+        "start": 61,
+        "end": 62,
+        "text": "Caralho!",
+        "enabled": true,
+        "flagged": false,
+        "words": [
+          {
+            "text": "Caralho!",
+            "start": 61,
+            "end": 62
+          }
+        ],
+        "review": false
+      }
+    ],
+    "cards": [
+      {
+        "id": "a71c10e0-3dce-4f5d-856b-bf53a0eeb115",
+        "start": 52.88,
+        "end": 62.12,
+        "title": "O bagulho já começa como",
+        "reason": "O texto se aproxima de humor. Confira o começo e a conclusão.",
+        "engine": "IA local",
+        "kind": "humor",
+        "cues": [
+          {
+            "start": 52.88,
+            "end": 53,
+            "text": "Quando mais episódios já começam a frenético assim, né? Normal?",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Quando mais episódios já começam a frenético assim, né? Normal?",
+                "start": 46,
+                "end": 53
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 53,
+            "end": 56,
+            "text": "O bagulho já começa como?",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "O bagulho já começa como?",
+                "start": 53,
+                "end": 56
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 56,
+            "end": 59,
+            "text": "Espâncano, uma de envolvianos.",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Espâncano, uma de envolvianos.",
+                "start": 56,
+                "end": 59
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 59,
+            "end": 61,
+            "text": "Que porra é essa chat?",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Que porra é essa chat?",
+                "start": 59,
+                "end": 61
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 61,
+            "end": 62,
+            "text": "Caralho!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Caralho!",
+                "start": 61,
+                "end": 62
+              }
+            ],
+            "review": false
+          }
+        ]
+      },
+      {
+        "id": "a5b62bd6-0e59-460e-b9ad-56c35825634c",
+        "start": 11.88,
+        "end": 27,
+        "title": "Ah",
+        "reason": "O texto se aproxima de humor. Confira o começo e a conclusão.",
+        "engine": "IA local",
+        "kind": "humor",
+        "cues": [
+          {
+            "start": 11.88,
+            "end": 12,
+            "text": "Ah!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Ah!",
+                "start": 10,
+                "end": 12
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 12,
+            "end": 14,
+            "text": "Ah!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Ah!",
+                "start": 12,
+                "end": 14
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 14,
+            "end": 16,
+            "text": "Ah!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Ah!",
+                "start": 14,
+                "end": 16
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 16,
+            "end": 18,
+            "text": "Ah!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Ah!",
+                "start": 16,
+                "end": 18
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 18,
+            "end": 20,
+            "text": "Ah!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Ah!",
+                "start": 18,
+                "end": 20
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 20,
+            "end": 22,
+            "text": "Ah!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Ah!",
+                "start": 20,
+                "end": 22
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 22,
+            "end": 24,
+            "text": "Ah!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Ah!",
+                "start": 22,
+                "end": 24
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 25.56,
+            "end": 26.88,
+            "text": "é hora da verdade, Chat.",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "é",
+                "start": 25.56,
+                "end": 25.78
+              },
+              {
+                "text": "hora",
+                "start": 25.78,
+                "end": 25.94
+              },
+              {
+                "text": "da",
+                "start": 25.94,
+                "end": 26.08
+              },
+              {
+                "text": "verdade,",
+                "start": 26.08,
+                "end": 26.42
+              },
+              {
+                "text": "Chat.",
+                "start": 26.64,
+                "end": 26.88
+              }
+            ],
+            "review": false
+          }
+        ]
+      },
+      {
+        "id": "c9439750-c7fd-4c8d-b16e-dad9ec7d0b28",
+        "start": 36.160000000000004,
+        "end": 52.660000000000004,
+        "title": "Fudeu, porra",
+        "reason": "O texto se aproxima de surpresa. Confira o começo e a conclusão.",
+        "engine": "IA local",
+        "kind": "impact",
+        "cues": [
+          {
+            "start": 36.28,
+            "end": 37.32,
+            "text": "Fudeu, porra!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Fudeu,",
+                "start": 36.28,
+                "end": 36.78
+              },
+              {
+                "text": "porra!",
+                "start": 36.9,
+                "end": 37.32
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 42.4,
+            "end": 48,
+            "text": "Quando",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Quando",
+                "start": 42.4,
+                "end": 49.7
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 48,
+            "end": 52.660000000000004,
+            "text": "Quando mais episódios já começam a frenético assim, né? Normal?",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Quando mais episódios já começam a frenético assim, né? Normal?",
+                "start": 46,
+                "end": 53
+              }
+            ],
+            "review": false
+          }
+        ]
+      },
+      {
+        "id": "2f9e18ec-a504-49e5-b97e-74c3791d3d01",
+        "start": 25.439999999999998,
+        "end": 37.44,
+        "title": "é hora da verdade, Chat",
+        "reason": "O texto se aproxima de humor. Confira o começo e a conclusão.",
+        "engine": "IA local",
+        "kind": "humor",
+        "cues": [
+          {
+            "start": 25.56,
+            "end": 26.88,
+            "text": "é hora da verdade, Chat.",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "é",
+                "start": 25.56,
+                "end": 25.78
+              },
+              {
+                "text": "hora",
+                "start": 25.78,
+                "end": 25.94
+              },
+              {
+                "text": "da",
+                "start": 25.94,
+                "end": 26.08
+              },
+              {
+                "text": "verdade,",
+                "start": 26.08,
+                "end": 26.42
+              },
+              {
+                "text": "Chat.",
+                "start": 26.64,
+                "end": 26.88
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 27.48,
+            "end": 29.12,
+            "text": "Corrâvamos, Matimbo.",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Corrâvamos,",
+                "start": 27.48,
+                "end": 28.259999999999998
+              },
+              {
+                "text": "Matimbo.",
+                "start": 28.52,
+                "end": 29.12
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 29.9,
+            "end": 30.46,
+            "text": "Fudeu!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Fudeu!",
+                "start": 29.9,
+                "end": 30.46
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 30.9,
+            "end": 32.16,
+            "text": "Fudeu!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Fudeu!",
+                "start": 30.9,
+                "end": 32.16
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 32.76,
+            "end": 33.78,
+            "text": "Fudeu!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Fudeu!",
+                "start": 32.76,
+                "end": 33.78
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 34.08,
+            "end": 35.7,
+            "text": "Fudeu, caraio!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Fudeu,",
+                "start": 34.08,
+                "end": 35.06
+              },
+              {
+                "text": "caraio!",
+                "start": 35.16,
+                "end": 35.7
+              }
+            ],
+            "review": false
+          },
+          {
+            "start": 36.28,
+            "end": 37.32,
+            "text": "Fudeu, porra!",
+            "enabled": true,
+            "flagged": false,
+            "words": [
+              {
+                "text": "Fudeu,",
+                "start": 36.28,
+                "end": 36.78
+              },
+              {
+                "text": "porra!",
+                "start": 36.9,
+                "end": 37.32
+              }
+            ],
+            "review": false
+          }
+        ]
+      }
+    ]
+  },
+  "semantic322": {
+    "id": 1,
+    "type": "done",
+    "scores": [
+      {
+        "humor": 0.2393424767273111,
+        "impact": 0.18777811863269633,
+        "insight": 0.18821426181924497,
+        "story": 0.19094846171554253,
+        "tutorial": 0.3062634226219206
+      },
+      {
+        "humor": 0.49305268127554713,
+        "impact": 0.24973555381088042,
+        "insight": 0.20247485178758887,
+        "story": 0.17412089979688355,
+        "tutorial": 0.11013655242925108
+      }
+    ]
+  },
+  "board322": {
+    "cards": 4,
+    "independentEdits": true,
+    "preserveLegacy": true,
+    "applyPreservesCues": true,
+    "persist": true,
+    "responsive": [
+      1440,
+      1024,
+      390
+    ],
+    "jobs": [
+      {
+        "title": "Não selecionado",
+        "status": "pending",
+        "path": "/workspace/scratch/a0340f354a16/clipa322/qa/batch-1793217408644/single.mp4"
+      },
+      {
+        "title": "Primeiro short",
+        "status": "done",
+        "message": "Salvo · /workspace/scratch/a0340f354a16/clipa322/qa/batch-1793217408644/Lote de shorts/01 - Primeiro short.mp4",
+        "path": "/workspace/scratch/a0340f354a16/clipa322/qa/batch-1793217408644/Lote de shorts/01 - Primeiro short.mp4"
+      },
+      {
+        "title": "Segundo short",
+        "status": "done",
+        "message": "Salvo · /workspace/scratch/a0340f354a16/clipa322/qa/batch-1793217408644/Lote de shorts/02 - Segundo short.mp4",
+        "path": "/workspace/scratch/a0340f354a16/clipa322/qa/batch-1793217408644/Lote de shorts/02 - Segundo short.mp4"
+      }
+    ],
+    "errors": []
+  },
+  "edge322": {
+    "cancel": true,
+    "manualAfterCancel": true,
+    "consentGate": true,
+    "coverIsolation": true,
+    "preflight": true,
+    "destinationCancel": true,
+    "faceModel": "IA conferiu 1 câmera(s). Revise o rosto no início e no fim.",
+    "coverExport": [
+      {
+        "status": "done",
+        "path": "/workspace/scratch/a0340f354a16/clipa322/qa/cover-export-1793218168112/Meus shorts/01 - Meu corte 1.mp4",
+        "message": "Salvo · /workspace/scratch/a0340f354a16/clipa322/qa/cover-export-1793218168112/Meus shorts/01 - Meu corte 1.mp4"
+      },
+      {
+        "status": "done",
+        "path": "/workspace/scratch/a0340f354a16/clipa322/qa/cover-export-1793218168112/Meus shorts/02 - Meu corte 2.mp4",
+        "message": "Salvo · /workspace/scratch/a0340f354a16/clipa322/qa/cover-export-1793218168112/Meus shorts/02 - Meu corte 2.mp4"
+      }
+    ],
+    "errors": [],
+    "coverExportMedia": [
+      {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1080,
+            "height": 1920,
+            "nb_frames": "12"
+          },
+          {
+            "codec_name": "aac",
+            "nb_frames": "20"
+          }
+        ]
+      },
+      {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 1080,
+            "height": 1920,
+            "nb_frames": "12"
+          },
+          {
+            "codec_name": "aac",
+            "nb_frames": "20"
+          }
+        ]
+      }
+    ]
+  },
+  "layouts321": {
+    "presets": 15,
+    "swap": true,
+    "undoRedo": true,
+    "timeline": true,
+    "project": true,
+    "gesture": true,
+    "errors": []
+  },
+  "queue-cancel320": {
+    "cancelPreservedSource": true,
+    "partialAbsent": true,
+    "retry": true,
+    "errors": []
+  },
+  "environment": "Linux virtual display / Electron 44.7.0; physical Windows capture not tested",
+  "guide": {
+    "chapters": [
+      {
+        "id": "01-entrada",
+        "duration": 12.197,
+        "frames": 20
+      },
+      {
+        "id": "02-cards",
+        "duration": 13.793,
+        "frames": 28
+      },
+      {
+        "id": "03-editar",
+        "duration": 22.892,
+        "frames": 141
+      },
+      {
+        "id": "04-aplicar",
+        "duration": 19.462,
+        "frames": 51
+      },
+      {
+        "id": "05-entregar",
+        "duration": 16.398,
+        "frames": 70
+      }
+    ],
+    "errors": [],
+    "note": "Transcrição real reutilizada; geração local de candidatos e adaptação de rosto executadas no app. O guia termina nas opções de exportação; os MP4 foram validados nos testes."
+  },
+  "modelFiles": {
+    "renderer/models/Xenova/paraphrase-multilingual-MiniLM-L12-v2/config.json": "05b570bff786faa5c4604152aa16f19f77ed6dfc31e47dd0f3dd987078693ac7",
+    "renderer/models/Xenova/paraphrase-multilingual-MiniLM-L12-v2/tokenizer_config.json": "3f5961b9ac86288cccdb97f32fb848d6187c78e1603958c53f3ea1f296b7d8a2",
+    "renderer/models/Xenova/paraphrase-multilingual-MiniLM-L12-v2/special_tokens_map.json": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f",
+    "renderer/models/Xenova/paraphrase-multilingual-MiniLM-L12-v2/CLIPA-ATTRIBUTION.txt": "0e7c11e0b66ef88c7c9f9b101c53224b3ef1745eaf2227f77b033f20fe11e83d",
+    "renderer/models/Xenova/paraphrase-multilingual-MiniLM-L12-v2/tokenizer.json": "b60b6b43406a48bf3638526314f3d232d97058bc93472ff2de930d43686fa441",
+    "renderer/models/Xenova/paraphrase-multilingual-MiniLM-L12-v2/onnx/model_quantized.onnx": "66fc00f5f29afcaff34092e1bdd20008ca3918265a82fb9695a551e510cc4ebc"
+  }
+}

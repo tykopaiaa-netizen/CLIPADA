@@ -1,0 +1,8 @@
+Model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Original authors: Sentence Transformers (Nils Reimers and contributors)
+ONNX conversion: Xenova
+Source: https://huggingface.co/Xenova/paraphrase-multilingual-MiniLM-L12-v2
+Original model: https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+License: Apache License 2.0 (see ../../APACHE-2.0.txt)
+The quantized ONNX weights and tokenizer are unmodified.
+Used locally to compare transcribed speech with editor-selected topics.

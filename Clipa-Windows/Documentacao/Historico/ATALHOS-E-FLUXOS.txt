@@ -1,0 +1,82 @@
+ATALHOS PRINCIPAIS
+Espaço: reproduzir / pausar no ponto atual.
+Shift + arrastar com botão esquerdo OU direito: selecionar um intervalo vermelho.
+× ou Delete: excluir o intervalo da faixa ativa.
+S / Dividir: dividir a faixa ativa no cursor.
+I e O: marcar início e fim. ✂ Manter ou Ctrl+Shift+X remove tudo fora deles.
+Ctrl+Z: desfazer exclusão/divisão. Sem esse histórico, desfaz enquadramento.
+M: bandeira no cursor. Shift+M: guardar intervalo como lembrete.
+[ e ]: navegar entre marcas. Ctrl+S: salvar projeto. Ctrl+E: exportar.
++ / -: zoom da timeline. Ctrl+K: procurar uma ação. ?: ajuda.
+Ctrl+Shift+9: iniciar/parar gravação no Windows, respeitando o seletor e permissões.
+
+CORTES E CAMADAS
+Clique no nome de uma faixa para mudar nome e cor.
+Excluir na faixa Vídeo retira esse tempo da montagem inteira, incluindo áudio,
+legendas e imagens. O original permanece intacto. A timeline mantém o relógio
+do original e mostra os trechos excluídos hachurados; a prévia e o MP4 os pulam.
+Excluir em áudio, imagem ou legenda afeta somente essa faixa.
+Faixas de voz, imagens e sons aparecem quando adicionadas. Ampliar mantém a timeline.
+
+Cortes IA cria sugestões por fala e texto. Cada sugestão aparece em uma linha.
+16:9 ou 9:16 abre o corte e preserva seu enquadramento e estilo de legenda.
+São cortes alternativos do original, não vídeos sobrepostos que tocam ao mesmo tempo.
+A montagem temporal do original é compartilhada; use Guardar projeto deste corte
+para edições totalmente independentes. Não há renderização em lote nesta versão.
+Importar vídeos já cortados aceita vários arquivos e guarda projetos separados na
+biblioteca. Ao trocar para um deles pelo painel, o projeto aberto é preservado.
+
+LEGENDAS
+Legendas > Gerar: escolha Vídeo inteiro ou o intervalo De / Até e o idioma falado.
+A IA lê blocos de 24 segundos, com sobreposição de contexto. Base e Tiny são locais.
+Revisar análise mostra cada bloco: resultado, silêncio, parte a revisar ou falha.
+Clique em um bloco para ouvir e repetir com outro idioma/modelo.
+Detectar idioma agora consulta o modelo; em trechos mistos ainda pode errar.
+Para vídeo dublado em português, escolher Português costuma ser mais consistente.
+A IA não distingue com segurança donate, voz sintetizada ou pessoas sobrepostas.
+Abra Legendas, vá a um instante com texto e arraste a alça ↔ Legenda na prévia.
+Cor, tamanho, contorno e estilo continuam no painel. Revise texto e tempos.
+
+ÁUDIO
++ Adicionar > Extrair áudio mostra a onda e os blocos do som original.
+Use De / Até > Isolar trecho para criar um bloco independente. Arraste a bolinha
+para regular seu volume; duplo clique volta a 0 dB. Há fades e mix/master opcional.
+Voz / música > Separar com IA aceita até 60 s por trabalho e 5 min por projeto.
+Voz e Instrumental substituem o original nesse intervalo sem duplicá-lo.
+A separação pode deixar resíduos e incluir canto na voz; ouça as duas faixas.
+Ela não identifica direitos autorais. Mix/master afeta a soma das faixas.
+
+FUNDO, VERTICAL E MOVIMENTO
++ Adicionar > Imagem de fundo mostra a resolução necessária. Preencher pode cortar;
+Inteira preserva a imagem; Desfoque preenche as sobras. Ajustar com IA procura rostos
+para enquadrar, não inventa detalhes ou amplia por geração de imagem.
+O vertical oferece 2 câmeras + conteúdo, 1 câmera + conteúdo e quadro livre.
+Enquadrar mostra Encontrar câmera, Seguir rosto e Remover fundo. Sugestões precisam
+ser revisadas, principalmente com desenhos/rostos dentro do conteúdo.
+Câmera + fundo: selecione Vídeo, Câmera e Fundo. Em Movimento ajuste descida, subida
+e Pausa no topo. O padrão visual usa 6 s para descer, 10 s para subir e 5 s no topo.
+Reproduzir mostra a animação; ela também entra no MP4. A linha divisória vem desligada.
+
+EXPORTAÇÃO E LIMITES
+720p horizontal: 1280×720; vertical: 720×1280.
+1080p horizontal: 1920×1080; vertical: 1080×1920. 60 fps é selecionável.
+Há perfis menores e maiores, conforme codec, memória e capacidade do computador.
+Aumentar resolução ou fps não recupera detalhes nem quadros ausentes no original.
+CPU é uma alternativa mais lenta. Os motivos que impedem renderizar aparecem no painel.
+Entrada: até 30 GB por vídeo; importação em lote: até 20 arquivos por vez.
+Imagens/sons adicionais: até 24 itens, 256 MB no total. Imagens: até 40 megapixels.
+Montagens com cortes e mixagem: exporte até 10 minutos por vez (fonte mantida e saída).
+Limite estimado de saída em memória no desktop: 900 MB. Reduza duração/qualidade se necessário.
+Não é um editor multicâmera ilimitado, nem um substituto completo de Vegas/CapCut.
+
+DIREITOS E PUBLICAÇÃO
+Não existe tempo seguro de pausa no topo, movimento ou filtro que impeça Content ID.
+Até poucos segundos podem gerar uma reivindicação. Movimento é um recurso visual.
+Reação/comentário e monetização de conteúdo reutilizado são avaliações distintas de
+copyright; autorização/licença e as regras aplicáveis ao conteúdo continuam relevantes.
+https://support.google.com/youtube/answer/9783148?hl=pt-BR
+https://support.google.com/youtube/answer/1311392?hl=pt-BR
+Publicar requer conexão/autorização oficial e configuração das APIs das redes;
+só o link do canal não concede permissão. Nenhum vídeo foi publicado nos testes.
+
+Veja VALIDACAO-3.15.txt para o que foi realmente testado e as limitações.

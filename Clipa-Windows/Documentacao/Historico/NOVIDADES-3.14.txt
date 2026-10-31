@@ -1,0 +1,16 @@
+CLIPA 3.14 — FUNDO, CAMADAS E FLUXO DE EDIÇÃO
+• Entrada com somente Abrir vídeo e Gravar tela como ações principais.
+• Escolha do modelo depois de carregar ou gravar o material.
+• Menu Ferramentas, contexto curto e opções avançadas recolhidas.
+• Fundo acessível diretamente; proporção da saída e dimensões visíveis.
+• Preencher / Inteira / Desfoque; IA local de rostos para enquadrar o fundo.
+• + Adicionar na timeline para fundo, imagem, som e áudio original.
+• Imagens com duração, opacidade, posição, arraste e redimensionamento.
+• Sons adicionais com ganho, fades, offset, arraste e aparo do bloco.
+• Prévia, exportação e projeto salvo usam os mesmos ajustes de mídia.
+• Faixas aparecem somente quando há material; o bloco adicionado fica acessível.
+• Finalização reúne MP4, status do projeto, biblioteca e publicação.
+• Alterar imagens/sons/fundo invalida a renderização antiga para a finalização.
+• Preservados os recursos de áudio por trecho, separação local, qualidade, modelos e captura da 3.13.
+
+Limites: a IA de fundo é enquadramento por rostos, não outpainting; resize não melhora detalhes perdidos. A captura física no Windows e o envio às redes não foram executados neste ambiente.

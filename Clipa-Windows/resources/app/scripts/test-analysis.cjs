@@ -1,0 +1,6 @@
+const assert=require('node:assert/strict'),p=require('../renderer/pro-core.js');
+const jobs=p.chunks(0,7200,60,2);assert.equal(jobs.length,120);assert.equal(jobs[0].start,0);assert.equal(jobs.at(-1).end,7200);for(let i=0;i<jobs.length;i++){assert(jobs[i].readEnd-jobs[i].readStart<=64);if(i)assert.equal(jobs[i].start,jobs[i-1].end);}
+const silence=new Float32Array(16000);p.prepareSpeech(silence);assert.equal(p.audible(silence).length,0);
+const a=[{start:0,end:2,text:'antes',enabled:true},{start:3,end:5,text:'meio',enabled:true},{start:7,end:8,text:'depois',enabled:true}];const merged=p.mergeCues(a,[{start:3.2,end:4.8,text:'novo',enabled:true}],3,5);assert.deepEqual(merged.map(x=>x.text),['antes','novo','depois']);
+const cues=Array.from({length:30},(_,i)=>({start:i*3,end:i*3+2.5,text:i%2?'Veja como funciona.':'Olha o que aconteceu?',enabled:true}));const cuts=p.automaticCuts(cues,0,90,15,5);assert(cuts.length>1&&cuts.length<=5);assert(cuts.every(c=>c.start>=0&&c.end<=90&&c.end>c.start));for(const c of cuts)for(const d of cuts)if(c!==d)assert(Math.max(0,Math.min(c.end,d.end)-Math.max(c.start,d.start))<Math.min(c.end-c.start,d.end-d.start)*.15);
+console.log('PASS: análise de 2 horas dividida em 120 blocos limitados; silêncio; preservação de legendas; sugestões e sobreposição.');

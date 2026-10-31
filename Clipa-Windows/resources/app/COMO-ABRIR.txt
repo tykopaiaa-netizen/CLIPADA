@@ -1,0 +1,4 @@
+CLIPA 3.12
+
+Extraia todo o ZIP. Abra Clipa-Windows/Clipa.exe.
+Mantenha todos os arquivos juntos. Leia COMECE-AQUI.txt.

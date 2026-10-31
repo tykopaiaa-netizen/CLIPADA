@@ -1,0 +1,1 @@
+Extraia TODO o ZIP e abra Clipa.exe. Esta é a versão desktop 3.15. Comece por COMECE-AQUI.txt.

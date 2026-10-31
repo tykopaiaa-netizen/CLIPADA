@@ -1,0 +1,36 @@
+CLIPA 3.20 — GRAVAÇÃO, FLUXOS LONGOS E ENTREGA
+
+- Motor Windows nativo: captura de tela inteira em processo FFmpeg separado,
+  codificação H.264, mistura de áudio do sistema/microfone, saída MP4/AAC.
+- Captura Compatibilidade e RAM continuam disponíveis para telas/janelas.
+- Arquivos importados do disco recebem uma referência nativa; a exportação
+  não precisa copiá-los integralmente para a pasta temporária antes de ler.
+- Gravação automática salva só a referência do arquivo em disco na biblioteca
+  de recuperação; evita uma segunda cópia inteira no IndexedDB.
+- Duração prioriza a trilha de vídeo, e o decodificador busca contexto anterior
+  para cortes entre quadros, inclusive no último instante da gravação.
+- Fila de até 32 ajustes, destinos separados, um render por vez, cancelamento,
+  nova tentativa, retorno ao projeto e Mostrar arquivo após salvar.
+- Detecção de pausas com limiar, duração mínima, bordas e revisão. Aplicação
+  não destrutiva na timeline, com desfazer.
+- Groq Whisper Large v3/Turbo opcional: chave criptografada, consentimento,
+  contexto de vocabulário, tempos por palavra e bloqueio antes de enviar sem chave.
+- Legendas longas: blocos de 24 s, checkpoints, retomada; três falhas consecutivas
+  param a análise para não continuar varrendo horas com uma configuração inválida.
+- Ctrl+K busca ferramentas. Painéis compactos, fila em uma janela lateral,
+  botões de conclusão e cancelamento fixos, textos e dicas revisados.
+
+REFERÊNCIAS
+O repositório https://github.com/Gulubba/Uniprae foi revisado nesta atualização.
+Foram adaptadas as ideias de detecção de pausas com revisão, Whisper e automação
+ de tarefas. A implementação do Clipa é própria e mantém seu editor independente.
+Os painéis CEP, instalador, ExtendScript e servidor MCP do Uniprae não foram
+embutidos. Esta versão não conecta um assistente externo à timeline por MCP.
+Documentação usada: Electron screen/desktopCapturer e Groq speech-to-text.
+https://www.electronjs.org/docs/latest/api/screen
+https://www.electronjs.org/docs/latest/api/desktop-capturer
+https://console.groq.com/docs/speech-to-text
+
+A edição de câmera, sobreposições, voz/música, mixagem e cópia de blocos da 3.19
+foi preservada. Publicação social continua dependendo das credenciais e
+permissões das APIs; não houve publicação real de contas nesta revisão.

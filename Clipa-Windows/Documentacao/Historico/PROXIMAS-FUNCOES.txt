@@ -1,0 +1,19 @@
+LIMITAÇÕES E EVOLUÇÕES AINDA NÃO ENTREGUES
+
+- Timeline multicâmera com várias fontes de vídeo simultâneas, ripple visual,
+  transições entre arquivos e renderização de vários cortes em lote.
+  3.15 divide a faixa e exclui tempos da montagem; o relógio visual continua
+  sendo o do original. Imagens e sons adicionais são camadas sobrepostas.
+- Proxies e renderização nativa diretamente em disco para saídas enormes.
+- Super-resolução neural, redução neural de ruído e interpolação de quadros.
+  A separação de Voz/Instrumental local já está disponível, com limites e resíduos.
+- Keyframes gerais de todas as propriedades, edição multicâmera e nested timelines.
+- Histórico automático completo de versões e projeto portátil reunindo mídias.
+  O salvamento principal é manual; abrir um arquivo do painel de importação em
+  lote preserva o projeto corrente em um rascunho na biblioteca.
+- OAuth hospedado e agenda com PC desligado; as integrações exigem configuração.
+- Treinamento de um clone de voz dentro do Clipa; aceita voz importada ou ID
+  aprovado quando o provedor/API configurado oferece essa função.
+
+IA não substitui revisão. Os limites e testes desta versão estão em
+COMECE-AQUI.txt e VALIDACAO-3.15.txt.

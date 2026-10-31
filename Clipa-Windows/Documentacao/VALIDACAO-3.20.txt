@@ -1,0 +1,49 @@
+VALIDAÇÃO CLIPA 3.20 — 28/10/2026
+
+AMBIENTE: Linux, Electron 44.7.0, tela virtual 1440x960, FFmpeg do ambiente para
+executar testes. O pacote Windows mantém o FFmpeg x64 incluído na distribuição.
+
+PASSOU
+1. Treze exportações: horizontal 240p60, 720p60, 1440p60 e 4K60; vertical livre 1080p60; vertical
+   com uma e duas câmeras; composição horizontal/vertical; Canal Dark em ambas
+   orientações; velocidades 0,5x e 2x. Quantidade, dimensões, H.264 e AAC verificados.
+2. Fonte móvel sintética de 4 s: 240 quadros distintos no MP4 720p60.
+3. Captura real via MediaRecorder com duas fontes de áudio, janela do app oculta:
+   MP4 720p60 com 311 quadros, dos quais 308 distintos, duração 5,183 s, áudio AAC.
+4. Processo nativo: fonte sintética em tempo real, codificação e muxagem no disco,
+   193/193 quadros distintos, 60 fps, H.264 + AAC. Não é captura física Windows.
+5. Adaptador de gravação nativa: três gravações seguidas, abertura do editor,
+   finalização e liberação das trilhas. Sistema e microfone simulados, incluindo modo sem áudio. Reabertura após
+   recarregar o app usa a referência no disco, sem cópia grande no IndexedDB.
+6. Fila: três modelos/destinos (144p, vertical 480p, composição 1080p), arquivos
+   diferentes e restauração do projeto. Cancelamento remove saída parcial;
+   nova tentativa termina. Os trabalhos não renderizam simultaneamente.
+7. Fonte sintética de duas horas: abertura, seek e exportação dos últimos 0,5 s
+   a 60 fps, 30 quadros e AAC. Planejamento de 300 blocos ASR de até 28 s com contexto.
+   Não foi renderizado/transcrito um projeto inteiro de duas horas neste ambiente.
+8. Pausas: três intervalos esperados, margens corretas, seleção, aplicação e undo.
+9. Whisper Tiny local: transcrição real dos primeiros 24 s do clipa-original.webm
+   fornecido anteriormente; duas legendas temporizadas, nenhum erro e nenhum
+   placeholder. Isto verifica o caminho de inferência, não precisão universal.
+10. Checkpoint recuperado após reabrir a fonte; senha/consentimento excluídos
+    do estado do projeto. Groq: contrato HTTP, WAV, consentimento e erros por mocks.
+11. Câmera: cancelamento da IA, erro de modelo e nova tentativa, máscaras após
+    seek/reprodução e troca de qualidade; cancelamento de exportação e recuperação.
+12. Validação de capacidades rejeita caminhos arbitrários e ações não autorizadas.
+    Sintaxe dos módulos e estrutura PE x64 do executável Windows conferidas.
+13. Inspeção visual: 1440x900 e 1024x768, prévia e timeline permanecem acessíveis.
+
+LIMITES DA VALIDAÇÃO
+- Não há desktop físico Windows aqui. NVENC/QSV/AMF, captura GDI de jogos,
+  DPI/monitores e microfones reais dependem de teste nessa máquina.
+- A captura nativa usa uma tela inteira. Janela, jogo exclusivo ou conteúdo
+  protegido pode precisar do motor Compatibilidade; conteúdo protegido pode
+  permanecer preto.
+- O FPS nominal não comprova movimento: o arquivo pode repetir quadros perdidos
+  na captura. Não há interpolação de movimento nesta atualização.
+- Entrada até 100 GB, seleção IA até 48 h, mídia importada até 128 blocos no editor,
+  fila até 32 itens. Limites de disco/CPU/GPU continuam aplicáveis.
+- A fila é da sessão. Checkpoints e projetos têm persistência local. Projetos
+  completos e MP4s grandes podem usar bastante espaço temporário/local.
+- Groq ao vivo e publicação social não foram testados com contas reais.
+- Nada nesta validação garante ausência de falhas em todos os equipamentos.

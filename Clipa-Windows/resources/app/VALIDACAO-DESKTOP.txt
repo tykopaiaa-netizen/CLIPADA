@@ -1,0 +1,101 @@
+VALIDAÇÃO CLIPA 3.12 — 19/10/2026
+
+AMBIENTE E ALCANCE
+Electron 44.7.0 em Linux, tela virtual e Playwright. Runtime Windows x64 portátil
+incluído. O .exe não foi executado em Windows físico neste ambiente. Testes com
+fontes controladas não provam compatibilidade de todos os drivers ou microfones.
+O registro da 3.11 foi preservado em Documentacao/Historico/VALIDACAO-3.11.txt.
+
+TESTES REEXECUTADOS NA 3.12
+
+1. CAPTURA E MICROFONE
+• MediaRecorder real com imagem de tela e duas fontes de áudio controladas.
+• Tela selecionada antes do microfone; enumeração travada não bloqueia a abertura.
+• Cancelamento durante abertura, fontes que chegam atrasadas, falha de microfone,
+  falta de áudio do computador, nova tentativa e timeout de 15 segundos.
+• Fontes abertas são encerradas quando falha/cancela; botões voltam ao estado útil.
+• Falha de restrição tenta novamente com o MESMO deviceId solicitado.
+• Perfis de ruído/eco e seleção de canal conferidos. Dispositivo desconectado
+  não troca silenciosamente para o padrão; evento de permissão durante abertura
+  não cancela o teste em andamento.
+• Teste de quatro segundos encerra microfone e contexto de áudio automaticamente.
+• Entrada 8 num dispositivo estéreo é rejeitada com explicação; não produz silêncio.
+• Áudio WebAudio real: escolha automática encontra o canal direito com sinal.
+• WebM capturado convertido em MP4/AAC pelo editor. Análise espectral do MP4
+  decodificado confirmou os tons do computador (440 Hz) E microfone (1.320 Hz).
+  Não foi uma conversa real gravada por dispositivos Windows.
+
+2. INTERFACE E TIMELINE
+• Quatro cartões, seleção antes da importação, biblioteca oculta até clicar.
+• Layout em 1440×810, 1024×700 e 390×844: sem transbordamento horizontal,
+  com prévia e faixas visíveis. Não equivale a um aplicativo móvel nativo.
+• Ampliar/Restaurar aumenta a prévia e mantém a reprodução acessível.
+• Zoom e ajuste ao trecho; arrastar alças; cancelamento do arraste restaura o tempo.
+• Arrastar legenda, desfazer e menu de IA com início/fim corretos.
+• Desfazer tempo preserva texto revisado e não restaura palavras desatualizadas.
+• Repetição do trecho, avanço/retorno de quadro e miniaturas reais geradas.
+• Recorte quadrado respeita os pixels da fonte, inclusive em fonte não quadrada.
+• Avisos de ampliação, repetição de FPS e 4K; saída dimensional limitada.
+• 20.000 combinações de geometria/intervalos/canvas, além das 10.000 verificações
+  do motor de enquadramento: limites preservados.
+• Prévia de composição com movimento, busca, pausa e continuação.
+• Importação inválida conserva projeto aberto e alterações.
+• Salvar/reabrir/copiar projeto e invalidar render quando muda o conteúdo.
+• 54 arquivos próprios JS/CJS passaram por verificação de sintaxe.
+
+3. EXPORTAÇÃO REAL
+• MP4 H.264 e AAC: 720p60 em velocidades 2× e 0,5×; vertical 1080p60 em 2×.
+• Legendas, narração importada e fades presentes nas verificações de fluxo completo.
+• Seis demonstrações refeitas pelo aplicativo: horizontal, vertical com duas
+  câmeras, uma câmera, livre, câmera/vídeo/fundo e Canal Dark narrado.
+• Cada demonstração tem 480 quadros, 8 segundos de vídeo e áudio AAC.
+  Uma usa 1080×1920; as demais, 720p na orientação correspondente.
+• Maior intervalo entre timestamps de quadros: 0,016667 segundo nos seis arquivos.
+  Isso verifica a regularidade dos arquivos de teste, não o desempenho de qualquer PC.
+• Busca de ações fecha com Escape mesmo após digitar na caixa de pesquisa.
+• Guia gravado na interface real, com transcrição e exportação durante o percurso.
+
+4. INTELIGÊNCIA ARTIFICIAL
+• Whisper Base local realmente executado em amostra inglesa; 5 legendas dentro
+  dos limites. O guia também executa transcrição portuguesa no vídeo sintético.
+• Sugestões automáticas de corte geradas a partir da transcrição real.
+• Silêncio não gerou texto de exemplo.
+• Rastreamento local de rosto: 9 detecções em 9 amostras reais do teste.
+• Plano de 2 horas dividido em 120 blocos verificado sem inferência completa de
+  duas horas. Limite do perfil Mais leve aplicado aos blocos da transcrição.
+• Contratos de roteiro/voz: autorização, limites, respostas inválidas, cancelamento
+  e falhas com respostas controladas. Nenhuma geração paga real realizada.
+• A transcrição portuguesa tem erros; legenda exige revisão. Os exemplos usam
+  texto revisado. Não houve criação de clone de voz do usuário.
+
+5. PUBLICAÇÃO E SEGURANÇA
+• Botões visuais de YouTube/TikTok/Instagram acionados nos testes de formulário.
+• YouTube: texto preservado, limite UTF-8, público, visibilidade, tags e IA.
+• TikTok: limites da conta, privacidade sem escolha automática, consentimento,
+  opções indisponíveis, quadro de capa e texto combinado.
+• Instagram: limite compartilhado da legenda e requisitos de agendamento.
+• Erro de rede preserva formulário e permite nova tentativa.
+• Contratos do publicador reexecutados com respostas controladas: OAuth/PKCE,
+  fila, upload em blocos, recuperação e prevenção de duplicação.
+• Contratos nativos reexecutados: IPC do frame confiável, permissões, navegação,
+  captura e atalho. Isolamento de contexto e sandbox permanecem habilitados.
+• Credenciais continuam no cofre do sistema; bloqueio quando proteção indisponível.
+• Nenhuma conta real foi autorizada e nenhum vídeo foi postado nas redes nos testes.
+
+LIMITES IMPORTANTES
+• Windows físico, dispositivos USB/Bluetooth/interfaces reais, GPU/driver, atalho
+  global e loopback de chamada ainda precisam de validação no PC do usuário.
+• Não testados: entrada real de 30 GB, várias horas de renderização, 4K/120/240 fps
+  em máquinas distintas e uso prolongado em dispositivos móveis.
+• Importação até 30 GB não significa processamento integral desse volume.
+  CPU compatível aceita fonte até 256 MB; saída estimada limitada a 900 MB no
+  desktop; velocidade/fades/narração: até 600 segundos na entrada e na saída.
+• A timeline organiza intervalos de uma fonte; ainda não monta várias fontes
+  numa sequência contínua como um editor NLE completo.
+• Separação neural voz/música, super-resolução e interpolação neural não existem
+  nesta entrega. Análise de música não determina direitos autorais.
+• Perfis leves e limites reduzem o uso de recursos; não garantem ausência de
+  travamentos em toda máquina. Resolução maior não cria detalhes da gravação.
+
+O tutorial usa voz sintética gerada localmente com telemetria desativada e rede
+negada ao processo gerador. Esse gerador não foi incorporado ao aplicativo.
